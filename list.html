@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>2级天猫店铺列表</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <script src="js/plug.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="iconfont/iconfont.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="./js/encrypt.js"></script>
+    <script src="./js/list.js"></script>
+</head>
+
+<body>
+<div id="header"></div>
+
+
+
+    <div class="cata">
+        <div class="main clearfix cata_main">
+            <p class="cata_step fl"><a> 当前位置 ： </a><a href="" class="on">转让列表</a></p>
+          
+        </div>
+    </div>
+
+
+
+    <div class="screen_main clearfix">
+            <div class="classify tmall fl">
+                <div class="classify_lists">
+                        <div class="classify_list clearfix">
+                                <div class="classify_name fl">
+                                    <img src="image/class_2.png" alt=""/>
+                                    <span>平台：</span>
+                                </div>
+                                <div class="classify_con fl">
+                                    <a  class="classify_default"  href=""><em>全部</em></a>
+                                    <div class="talign" id="Platform">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_1.png" alt=""/>
+                            <span>类目：</span>
+                        </div>
+                        <div class="classify_con fl">
+                            <a href="javascript:;"  class="classify_default"><em>全部</em></a>
+                            <div class="talign" id="Class">
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_1.png" alt=""/>
+                            <span>等级：</span>
+                        </div>
+                        <div class="classify_con fl">
+                            <a href="javascript:;"  class="classify_default"><em>全部</em></a>
+                            <div class="talign" id="Level">
+                                    
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_2.png" alt=""/>
+                            <span>类型：</span>
+                        </div>
+                        <div class="classify_con fl">
+                            <a  class="classify_default"  href=""><em>全部</em></a>
+                            <div class="talign">
+                                <a  href=""><em>旗舰店</em></a>
+                                <a  href=""><em>专营店</em></a>
+                                <a  href=""><em>专卖店</em></a>
+                                <a  href=""><em>供销平台</em></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_3.png" alt=""/>
+                            <span>商标：</span>
+                        </div>
+                        <div class="classify_con fl">
+                            <a  class="classify_default"  href="javascript:search('b0');"><em>全部</em></a>
+                            <div class="talign">
+                                <a href="javascript:search('b1');" ><em>R标</em></a>
+                                <a href="javascript:search('b2');" ><em>TM标</em></a>
+                                <a href="javascript:search('b3');" ><em>授权商标</em></a>
+                                <a href="javascript:search('b4');" ><em>自有商标</em></a>
+                                <a href="javascript:search('b5');" ><em>可贴牌</em></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_4.png" alt=""/>
+                            <span>价格：</span>
+                        </div>
+                        <div class="classify_con fl classify_range">
+                            <a  class="classify_default"  href=""><em>全部</em></a>
+                            <div class="talign">
+                                <a  href=""><em>5万以下</em></a>
+                                <a  href=""><em>5-10万</em></a>
+                                <a  href=""><em>10-30万</em></a>
+                                <a  href=""><em>30-50万</em></a>
+                                <a  href=""><em>50万以上</em></a>
+                            </div>
+                        </div>
+                        <form class="user_defined" action="/tmall/f2-c7" method="post">
+                            <input type="hidden" name="_token" value="ElQ74hpKa27u9kdqKJOjvaMCSRAchPze45M5qhcn">
+                            <input type="text" class="inp01" name="price_left" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                            <em></em>
+                            <input type="text" class="inp02" name="price_right" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                            <input type="submit" class="is_ok" value="筛&nbsp;选">
+                        </form>
+                    </div>
+                    <div class="classify_list clearfix">
+                        <div class="classify_name fl">
+                            <img src="image/class_5.png" alt=""/>
+                            <span>其他：</span>
+                        </div>
+                        <div class="classify_con fl">
+                            <ul class="kind_lists clearfix">
+                                <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i>地域选择</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">全部</li>
+                                        <li class="select_list">华东地区</li>
+                                        <li class="select_list">华北地区</li>
+                                        <li  class="select_list">华南地区</li>
+                                        <li class="select_list">华中地区</li>
+                                        <li class="select_list">东北地区</li>
+                                        <li class="select_list">西南地区</li>
+                                        <li class="select_list">西北地区</li>
+                                        <li class="select_list">海外</li>
+                                    </ul>
+                                </li>
+                            
+
+                                      
+                                
+                                <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i> 提供货源</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">4.6分以上</li>
+                                        <li class="select_list">4.5分以上</li>
+                                    </ul>
+                                </li>
+                                <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i> 是否新店</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">4.6分以上</li>
+                                        <li class="select_list">4.5分以上</li>
+                                    </ul>
+                                </li>
+
+                             
+                                <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i> 商标筛选</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">4.6分以上</li>
+                                        <li class="select_list">4.5分以上</li>
+                                    </ul>
+                                </li>
+                                 <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i>是否带货</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">不限</li>
+                                        <li class="select_list">不带货</li>
+                                        <li class="select_list">带货出售</li>
+                                    </ul>
+                                </li>
+                                <li class="kind_list fl" style='padding: 0 13px;'>
+                                    <i >扣分情况</i>
+                                    <img src="image/select_1.png" alt=""/>
+                                    <ul class="select_lists">
+                                        <li class="select_list">不限</li>
+                                        <li class="select_list">有扣分</li>
+                                        <li class="select_list">无扣分</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenfr tmall fr">
+                <div class="frtp">
+                    <div class="p"><img src="image/quckicon.png" alt=""></div>
+                        <a class="contactbtn" href=""><i></i>我要卖网店</a>
+                    </div>
+                    <div class="frbt">
+                        <div class="botit">市场交易动态</div>
+                        <div class="scrollbd">
+                            <div class="bd">
+                                <ul>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>33分钟前</i><i></i><b>以¥123000.00买</b>
+                                    <div>华中地区，类目开通：男女鞋，男女装，内衣...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>34分钟前</i><i>y***h</i><b>以¥85000.00买</b>
+                                    <div>华南地区  珠宝旗舰店 店铺无扣分 无贷款...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>35分钟前</i><i>y***i</i><b>以¥778000.00买</b>
+                                    <div>华南地区，一般纳税，类目：国产腕表，动态...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>39分钟前</i><i>4***7</i><b>以¥95000.00买</b>
+                                    <div>华南地区，医疗器械类目专营店，一般纳税人...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>44分钟前</i><i>z***3</i><b>以¥39000.00买</b>
+                                    <div>华东地区 箱包旗舰店 店铺无违规扣分 一般...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>45分钟前</i><i>1***6</i><b>以¥11000.00买</b>
+                                    <div>华东地区，女装旗舰店，店铺无贷款，公司小...</div>
+                                </a>
+                                    </li>
+                           
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>48分钟前</i><i></i><b>以¥50000.00买</b>
+                                    <div>入驻vap五金专用店 链接希望找个有缘人好好...</div>
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">
+                                    <i>48分钟前</i><i>y***j</i><b>以¥800000.00买</b>
+                                    <div>华北地区天猫旗舰店，随时可交接，诚心出，...</div>
+                                </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                    jQuery(".scrollbd").slide({mainCell: ".bd ul", autoPlay: true, effect: "topLoop", vis: 3});
+                })
+            </script>
+                </div>
+            </div>
+
+
+
+    <div class="goods_box main">
+        <div class=" goods_sort clearfix">
+            <div class="sort_box fl">
+                <span class="sort_new sort1 sortcolor2 " data-desc="0" data-asc="0" onclick="search('u0')">默认排序</span>
+                <span class="sort_new" onclick="search('u2')">信誉等级</span>
+                <span class="sort_new" onclick="search('u2')">好评率</span>
+                <span class="sort_new" onclick="search('u4')">出售价格</span>
+              
+            </div>
+            <div class="sort_page fl">
+                <span class="sort_up" onclick="window.open('javascript:;','_self')">
+                        上页
+                    </span>
+                <span class="sort_num"><i class="sort_curr">1</i>/<i
+                            class="sort_total">751</i></span>
+                <span class="sort_down" onclick="window.open('/tmall/f2-p2','_self')">
+                        下页
+                    </span>
+            </div>
+        </div>
+        <ul class="good_lists">
+            <li class="good_list clearfix">
+                <div class="good_left fl">
+                    <div class="good_title">
+                        <img src="image/logo_1.png" alt=""/>
+                        <h3 class="one-txt-cut">
+                            <a target="_blank" href="">华南地区，男装旗舰店，一般违规扣2分，无贷款，一般纳税人，无社保，半新店铺，只做了半年</a></h3>
+                        <img src="image/pei_tip.png" alt="陪同过户" title="陪同过户">
+                        <img src="image/kan_tip.png" alt="陪同过户" title="陪同过户">
+                      
+                    </div>
+                    <div class="oneself">卖家描述：一般违规扣2分，无贷款，无社保，一般纳税人， 挂靠地址，华南地区男装旗舰店</div>
+                    <ul class="tip_lists clearfix tmall">
+                        <li class="tip_list tip_list01 fl">
+                            <p>主营类目</p>
+                            <h3>服饰鞋包 </h3>
+                        </li>
+                        <li class="tip_list tip_list02 fl">
+                            <p>商城类型</p>
+                            <h3>旗舰店 </h3>
+                        </li>
+                        <li class="tip_list tip_list03 fl">
+                            <p>商标类型</p>
+                            <h3 title="25类">R标<b>(<i>25</i>类)</b></h3>
+                        </li>
+                        <li class="tip_list tip_list04 fl">
+                            <p>动态评分</p>
+                             <h3>4.8-4.8-4.8</h3>
+                        </li>
+                        <li class="tip_list tip_list06 fl">
+                            <p>违规扣分</p>
+                            <h3>2-0-0</h3>
+                        </li>
+                        <li class="tip_list tip_list07 fl">
+                            <p>纳税类型</p>
+                            <h3>一般纳税人 </h3>
+                        </li>
+                        <li class="tip_list tip_list08 fl">
+                            <p>消保金</p>
+                            <h3>¥50000(退还)</h3>
+                        </li>
+                        <li class="tip_list tip_list05 fl">
+                            <p>技术年费</p>
+                            <h3>¥20000</h3>
+                        </li>
+                    </ul>
+                    <div class="open_cata">开通类目： 男装
+                    </div>
+                </div>
+                <div class="good_left fr">
+                    <div class="good_price">
+                        <i>￥</i>
+                        <b>26.70万</b>
+                    </div>
+                    <a href= http://wpa.qq.com/msgrd?v=3&amp;uin=3001435327&amp;site=qq&amp;menu=yes target=&#039;_blank&#039; onclick=write_record(3001435327,0);_hmt.push([&#039;_trackEvent&#039;,&#039;connect&#039;,&#039;qq&#039;,&#039;tmall&#039;]); rel=nofollow >
+                            <div class="good_contact">
+                                <img src="image/qq_1.png" alt=""/>
+                                联系客服
+                            </div>
+                        </a>
+                    <div class="good_more">
+                        <a href="javascript:;" class="good_like" title='收藏' ><img src="image/star_1.png" alt=""/></a>
+                       
+                    </div>
+                    <div class="good_serial">编号：390017116006000M0101YAC1</div>
+                    <div class="good_date">今日</div>
+                </div>
+            </li>
+            <li class="good_list clearfix">
+                <div class="good_left fl">
+                    <div class="good_title">
+                        <img src="image/logo_1.png" alt=""/>
+                        <h3 class="one-txt-cut">
+                            <a target="_blank" href="">华南地区，男装旗舰店，一般违规扣2分，无贷款，一般纳税人，无社保，半新店铺，只做了半年</a></h3>
+                        <img src="image/pei_tip.png" alt="陪同过户" title="陪同过户">
+                        <img src="image/kan_tip.png" alt="陪同过户" title="陪同过户">
+                      
+                    </div>
+                    <div class="oneself">卖家描述：一般违规扣2分，无贷款，无社保，一般纳税人， 挂靠地址，华南地区男装旗舰店</div>
+                    <ul class="tip_lists clearfix tmall">
+                        <li class="tip_list tip_list01 fl">
+                            <p>主营类目</p>
+                            <h3>服饰鞋包 </h3>
+                        </li>
+                        <li class="tip_list tip_list02 fl">
+                            <p>商城类型</p>
+                            <h3>旗舰店 </h3>
+                        </li>
+                        <li class="tip_list tip_list03 fl">
+                            <p>商标类型</p>
+                            <h3 title="25类">R标<b>(<i>25</i>类)</b></h3>
+                        </li>
+                        <li class="tip_list tip_list04 fl">
+                            <p>动态评分</p>
+                             <h3>4.8-4.8-4.8</h3>
+                        </li>
+                        <li class="tip_list tip_list06 fl">
+                            <p>违规扣分</p>
+                            <h3>2-0-0</h3>
+                        </li>
+                        <li class="tip_list tip_list07 fl">
+                            <p>纳税类型</p>
+                            <h3>一般纳税人 </h3>
+                        </li>
+                        <li class="tip_list tip_list08 fl">
+                            <p>消保金</p>
+                            <h3>¥50000(退还)</h3>
+                        </li>
+                        <li class="tip_list tip_list05 fl">
+                            <p>技术年费</p>
+                            <h3>¥20000</h3>
+                        </li>
+                    </ul>
+                    <div class="open_cata">开通类目： 男装
+                    </div>
+                </div>
+                <div class="good_left fr">
+                    <div class="good_price">
+                        <i>￥</i>
+                        <b>26.70万</b>
+                    </div>
+                    <a href= http://wpa.qq.com/msgrd?v=3&amp;uin=3001435327&amp;site=qq&amp;menu=yes target=&#039;_blank&#039; onclick=write_record(3001435327,0);_hmt.push([&#039;_trackEvent&#039;,&#039;connect&#039;,&#039;qq&#039;,&#039;tmall&#039;]); rel=nofollow >
+                            <div class="good_contact">
+                                <img src="image/qq_1.png" alt=""/>
+                                联系客服
+                            </div>
+                        </a>
+                    <div class="good_more">
+                        <a href="javascript:;" class="good_like" title='收藏' ><img src="image/star_1.png" alt=""/></a>
+                       
+                    </div>
+                    <div class="good_serial">编号：390017116006000M0101YAC1</div>
+                    <div class="good_date">今日</div>
+                </div>
+            </li>
+
+        </ul>
+        <div class="page_box">
+            <a class='page_main'>首页</a>
+             <a class='page_prev'>上一页</a> 
+             <a class='current page_num' href='javascript:;'>1</a>
+             <a class='page_num' href='/tmall/f2-p2'>2</a>
+             <a class='page_num' href='/tmall/f2-p3'>3</a>
+             <a class='page_num' href='/tmall/f2-p4'>4</a>
+             <a class='page_num' href='/tmall/f2-p5'>5</a>
+             <a class='page_num' href='/tmall/f2-p6'>6</a>
+             <a class='page_num' href='/tmall/f2-p7'>7</a> 
+             <a class='page_next' href='/tmall/f2-p2'>下一页</a> 
+             <a class='page_main' href='/tmall/f2-p751'>尾页</a> 
+             <span>共<i>751</i>页/当前第<i>1</i>页</span>
+            跳转<input type="text" class="page_input" />页
+            <button class="page_change" data-total="" data-url="">确定</button>
+        </div>
+    </div>
+
+
+     <!--猜你喜欢-->
+            <div class="more_like main">
+                <h3 class="more_title">没找到您心仪的店铺？</h3>
+                <div class="more_or">
+                    <a href="" class="more_help">联系客服帮您找</a>
+                    <span>或</span>
+                    <a href="javascript:;" rel="nofollow" class="more_publish" onclick="mask_open()">发布求购需求</a>
+                </div>
+                <p class="more_guess">
+                    猜你喜欢
+                </p>
+                <ul class="more_lists clearfix">
+                    <li class="more_list fl">
+                        <div class="good_title good_letter">
+                            <img src="image/logo_1.png" alt=""/>
+                            <h3 class="letter" title="华北地区 服饰配件旗舰店 3字中文商标 非常好听 4年老店 诚心出售">
+                            <a target="_blank" href="">华北地区 服饰配件旗舰店 3字中文商标 非常好听 4...</a>
+                        </h3>
+                        </div>
+                        <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                <li class="tip_list fl">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                <li class="tip_list fl">
+                                    <p>商城类型</p>
+                                    <h3>旗舰店 </h3>
+                                </li>
+                            </ul>
+                            <div class="good_price fr">
+                                <i>￥</i>
+                                <span>25.50万</span>
+                            </div>
+                        </div>
+                        <div class="open_cata one-txt-cut">开通类目： 服饰配件/皮带/帽子/围巾
+                        </div>
+                    </li>
+                       <li class="more_list fl">
+                        <div class="good_title good_letter">
+                            <img src="image/logo_1.png" alt=""/>
+                            <h3 class="letter" title="华北地区 服饰配件旗舰店 3字中文商标 非常好听 4年老店 诚心出售">
+                            <a target="_blank" href="">华北地区 服饰配件旗舰店 3字中文商标 非常好听 4...</a>
+                        </h3>
+                        </div>
+                        <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                <li class="tip_list fl">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                <li class="tip_list fl">
+                                    <p>商城类型</p>
+                                    <h3>旗舰店 </h3>
+                                </li>
+                            </ul>
+                            <div class="good_price fr">
+                                <i>￥</i>
+                                <span>25.50万</span>
+                            </div>
+                        </div>
+                        <div class="open_cata one-txt-cut">开通类目： 服饰配件/皮带/帽子/围巾
+                        </div>
+                    </li>
+                       <li class="more_list fl">
+                        <div class="good_title good_letter">
+                            <img src="image/logo_1.png" alt=""/>
+                            <h3 class="letter" title="华北地区 服饰配件旗舰店 3字中文商标 非常好听 4年老店 诚心出售">
+                            <a target="_blank" href="">华北地区 服饰配件旗舰店 3字中文商标 非常好听 4...</a>
+                        </h3>
+                        </div>
+                        <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                <li class="tip_list fl">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                <li class="tip_list fl">
+                                    <p>商城类型</p>
+                                    <h3>旗舰店 </h3>
+                                </li>
+                            </ul>
+                            <div class="good_price fr">
+                                <i>￥</i>
+                                <span>25.50万</span>
+                            </div>
+                        </div>
+                        <div class="open_cata one-txt-cut">开通类目： 服饰配件/皮带/帽子/围巾
+                        </div>
+                    </li>
+                 
+                   
+                </ul>
+            </div>
+            <div id="footer"></div>
+ <script>
+    $('.kind_list').click(function(){    
+        $('.select_lists').css("display", "block");
+    })
+
+  
+
+     $(function() {
+         $('#header').load('./header.html');
+         $('#footer').load('./footer.html');
+     })
+</script>
+    
+</body>
+</html>
