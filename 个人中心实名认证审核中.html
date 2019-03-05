@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>个人中心实名认证审核中</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+               <div class="authentication">
+            <!-- /* .on1是待审核状态，.on2是审核失败状态，.on3是审核成功状态，不加就不显示 */ -->
+              <!-- 填写信息 -->
+                    <!-- 待审核 -->
+                      <div class="authentication_t on1">
+                  <i></i><span>实名认证</span><i class="authentication_t_state"><i class="authentication_t_pass"></i>审核中</i>
+                </div>
+              <div class="authentication_toaudited">
+                <div class="authentication_name">
+                  <span class="authentication_namen">本人姓名：</span><input class="authentication_input authentication_toaudited_input" type="text" value="唐**" readonly> <a href="" class="editshiming">修改实名</a>
+                </div>
+                <div class="authentication_name">
+                  <span class="authentication_namen">身份证号：</span><input class="authentication_input" type="text" value="510182********0054" readonly>
+                </div>
+              </div>
+              
+            <!-- 审核失败 -->
+              <!-- 审核通过 -->
+              </div>
+        </div>
+    </div>
+
+</div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+<script>
+        var sleepTime = 120; // 验证码等待时间 单位（s）
+        var showTime = sleepTime;
+      $('.authentication_submit').click(function(){
+          //获取数据
+          var realname = $('#realname').val();
+          var realname_reg = /^[\u4E00-\u9FA5\uF900-\uFA2D]{2,6}$/;
+          var idcard = $('#idcard').val();
+          var idcard_reg = /^(\d{6})+(\d{4})+(\d{2})+(\d{2})+(\d{3})([0-9]|X)$/;
+          var front_url = $('#front_url').attr('src');
+          var back_url = $('#back_url').attr('src');
+          var hold_url = $('#hold_url').attr('src');
+          var code = $('#code').val();
+          //验证身份证姓名
+         if(!realname_reg.test(realname)){
+            layer.msg('只能输入2-6位的姓名',{icon:0});
+            return;
+         }
+          //验证身份证号码
+          if(!idcard_reg.test(idcard)){
+              layer.msg('只能输入18位的有效身份证',{icon:0});
+              return;
+          }
+          //验证身份证正面
+          if(front_url.length <=0){
+              layer.msg('请上传身份证正面',{icon:0});
+              return;
+          }
+          //验证身份证反面
+          if(back_url.length <=0){
+              layer.msg('请上传身份证反面',{icon:0});
+              return;
+          }
+          //验证手持身份证
+          if(hold_url.length <=0){
+              layer.msg('请上传手持身份证照',{icon:0});
+              return;
+          }
+          //验证是否填写的验证码
+          if(code.length <=0){
+              layer.msg('请填写验证码',{icon:0});
+              return;
+          }
+
+          $.post('/userCenter/certification_update',{realname:realname,idcard:idcard,
+              front_url:front_url,back_url:back_url,hold_url:hold_url,
+              code:code,_token:$('#_token').val()},function (data) {
+              var data = eval("(" + data + ")");
+               if(data.status ==1){
+                   layer.msg(data.msg,{icon:1});
+                   setTimeout(function () {
+                       window.location.href = '/userCenter';
+                   },1500)
+               }else {
+                   layer.msg(data.msg,{icon:0});
+               }
+          })
+      });
+      //发送手机验证码
+      $('.authenticaion_send').click(function(){
+          var _this = $(this);
+          $.post('/userCenter/sendSms',{_token:$('#_token').val()},function (data) {
+              var data = eval("(" + data + ")");
+             if (data.status ==1){
+                 $(_this).attr('disabled', true);
+                 var countdown = function () {
+                     $(_this).text(showTime +'s后重新获取')
+                     showTime--
+                 };
+                 countdown();
+                 var codeTimer = setInterval(function (){
+                  // console.log(showTime);
+                  if (showTime == 0) {
+                    clearInterval(codeTimer);
+                    $(_this).attr('disabled', false);
+                    $(_this).text('重新获取验证码');
+                    showTime = sleepTime;
+                    return;
+                  }
+                  countdown();
+                 }, 1000);
+                //  setTimeout(function (){
+                //      clearInterval(codeTimer)
+                //      $(_this).attr('disabled', false)
+                //      $(_this).text('重新获取验证码')
+                //  }, sleepTime * 1000);
+             }else {
+                 layer.msg(data.msg,{icon:0});
+             }
+
+          })
+      });
+
+      // 让待审核的实名认证可读
+      $(".authentication_toaudited_change").click(function(){
+        $('.authentication_toaudited .authentication_toaudited_input').attr('readonly', false).focus().select()
+      });
+
+      $('.audit_success_change').click(function(){
+        $('.audit_success .authentication_toaudited_input').attr('readonly', false).focus().select()
+      });
+
+      // 审核成功里面的改变实名
+    </script>
+  <script>
+      $(function () {
+          $(".uploadfile").change(function () {
+              var _this = $(this);
+              var formData = new FormData();
+              var file =_this.context.files[0];
+              var _token = $('#_token').val();
+              formData.append('mypic',file);
+              formData.append('_token',_token);
+              $.ajax({
+                  url: "/userCenter/uploadFile",
+                  data: formData,
+                  type: "Post",
+                  dataType: "json",
+                  contentType: false,
+                  /**
+                   * 必须false才会避开jQuery对 formdata 的默认处理
+                   * XMLHttpRequest会对 formdata 进行正确的处理
+                   */
+                  processData: false,
+                  success: function (data) {
+                      if(data.status ==1){
+                       _this.next('img').attr('src',data.pic);
+                          _this.parent('div').addClass('on');
+                      }else {
+                         alert(data.msg);
+                      }
+                  }
+              })
+          });
+      });
+
+  </script>
+</html>

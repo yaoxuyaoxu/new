@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>个人中心订单</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+            <div class="user-orderwbox">
+                <ul class="user-orderul">
+                    <li class="active">
+                        <a href="">未完成订单</a>
+                    </li>
+                    <li>
+                        <a href="">已预定订单</a>
+                    </li>
+                    <li>
+                        <a href="">交接中订单</a>
+                    </li>
+                    <li>
+                        <a href="">已完成订单</a>
+                    </li>
+                </ul>
+                <div class="div1">
+                    <div class="user_order_item">
+                        <div class="user_order_tit">
+                            <ul>
+                                <li class="n1">&nbsp;</li>
+                                <li class="n2">&nbsp;</li>
+                                <li class="n3"> 订单概况</li>
+                                <li class="n4">客服信息</li>
+                                <li class="n7">订单操作</li>
+                                <li class="n5">总计应付款(元)</li>
+                                <li class="n6">订单状态</li>
+                            </ul>
+                        </div>
+                        <div class="user_order_list">
+                            <div class="clear item">
+                                <div class="item_hd"><span class="fl num">订单编号 201812110069249352649</span><span
+                                        class="fl saler">下单时间：2018-12-11</span></div>
+                                <div class="ac_item_hd">
+                                </div>
+                                <div class="item_bd">
+                                    <ul>
+                                        <li class="c1">
+                                            <p class="pic">
+                                                <img src="image/pai_t7.jpg"/>
+                                             </p>
+                                             <p class="tit"><a href="" target="_blank">淘宝2钻3c类目，4年老店，好评率98</a></p>
+                                        </li>
+                                        <li class="c2">
+                                            <p class="con">
+                                                <img src="image/smallShop_2.png"/>&nbsp;&nbsp;
+                                                <img src="image/s_cap_11.gif"/>
+                                                <br />
+                                                <br />成交单价：6400.00<br />&nbsp;&nbsp;&nbsp;服务费：640.00<br />优惠金额：0 <br />
+                                                &nbsp;&nbsp;&nbsp;消保金：30.00<br />
+                                                <br />
+                                               
+                                            </p>
+                                        </li>
+                                        <li class="c3">
+                                            <p class="con">
+                                                姓名：张晓硒<br />
+                                                工号：13314<br />
+                                                <a href= http://wpa.qq.com/msgrd?v=3&uin=2850906287&site=qq&menu=yes target='_blank' onclick=write_record(2850906287,0);_hmt.push(['_trackEvent','connect','qq','other']); rel=nofollow  style="margin-top:10px;display:inline-block;padding-left:18px;background:url('image/icon_qq.png') left center no-repeat">联系客服</a>
+                                                <a href= http://wpa.qq.com/msgrd?v=3&uin=3001230846&site=qq&menu=yes target='_blank' onclick=write_record(3001230846,0);_hmt.push(['_trackEvent','connect','qq','other']); rel=nofollow  style="margin-top:20px;display:inline-block;background:url('image/icon_qq.png') left center no-repeat;padding-left:18px;">客服主管</a>
+                                            </p>
+                                        </li>
+                                        <li class="c4">
+                                            <p class="con">
+                                                <a href=""
+                                               class="br5 btn_1">支付全款</a><br />
+                                                <a href=""
+                                               class="link link_1">支付定金</a>
+                                                <a href="" class="link link_1">取消订单</a>
+                                            </p>
+                                        </li>
+                                        <li class="c5"><br /><br /><br />
+                                            <p class="con">&yen;<strong>7070</strong></p>
+                                        </li>
+                                        <li class="c6">
+                                            <p class="con"><strong>等待买家付款</strong><br /><br /><br />未付款订单将在2天后失效<br /></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="clear item">
+                                <div class="item_hd"><span class="fl num">订单编号 201812110069249352649</span><span
+                                        class="fl saler">下单时间：2018-12-11</span></div>
+                                <div class="ac_item_hd">
+                                </div>
+                                <div class="item_bd">
+                                    <ul>
+                                        <li class="c1">
+                                            <p class="pic">
+                                                <img src="image/pai_t7.jpg"/>
+                                             </p>
+                                             <p class="tit"><a href="" target="_blank">淘宝2钻3c类目，4年老店，好评率98</a></p>
+                                        </li>
+                                        <li class="c2">
+                                            <p class="con">
+                                                <img src="image/smallShop_2.png"/>&nbsp;&nbsp;
+                                                <img src="image/s_cap_11.gif"/>
+                                                <br />
+                                                <br />成交单价：6400.00<br />&nbsp;&nbsp;&nbsp;服务费：640.00<br />优惠金额：0 <br />
+                                                &nbsp;&nbsp;&nbsp;消保金：30.00<br />
+                                                <br />
+                                               
+                                            </p>
+                                        </li>
+                                        <li class="c3">
+                                            <p class="con">
+                                                姓名：张晓硒<br />
+                                                工号：13314<br />
+                                                <a href= http://wpa.qq.com/msgrd?v=3&uin=2850906287&site=qq&menu=yes target='_blank' onclick=write_record(2850906287,0);_hmt.push(['_trackEvent','connect','qq','other']); rel=nofollow  style="margin-top:10px;display:inline-block;padding-left:18px;background:url('image/icon_qq.png') left center no-repeat">联系客服</a>
+                                                <a href= http://wpa.qq.com/msgrd?v=3&uin=3001230846&site=qq&menu=yes target='_blank' onclick=write_record(3001230846,0);_hmt.push(['_trackEvent','connect','qq','other']); rel=nofollow  style="margin-top:20px;display:inline-block;background:url('image/icon_qq.png') left center no-repeat;padding-left:18px;">客服主管</a>
+                                            </p>
+                                        </li>
+                                        <li class="c4">
+                                            <p class="con">
+                                                <a href=""
+                                               class="br5 btn_1">支付全款</a><br />
+                                                <a href=""
+                                               class="link link_1">支付定金</a>
+                                                <a href="" class="link link_1">取消订单</a>
+                                            </p>
+                                        </li>
+                                        <li class="c5"><br /><br /><br />
+                                            <p class="con">&yen;<strong>7070</strong></p>
+                                        </li>
+                                        <li class="c6">
+                                            <p class="con"><strong>等待买家付款</strong><br /><br /><br />未付款订单将在2天后失效<br /></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                        <div class="clear list_pages"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>个人中心</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+   
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fl user_cen">
+            <div class="topbanner">
+                <div class="div1">
+                    <div class="swiper-container user1-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user1-banner.jpg);"> </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user1-banner.jpg);"> </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user1-banner.jpg);"> </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="div2">
+                    <div class="swiper-container user1-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user2-banner.jpg);"> </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user2-banner.jpg);"> </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <img src="image/userlaba.png" class="img">
+                    <ul class="user-gonggao">
+                        <li>开店2个月一单真实成交都没有？那是因为你的运营方法不对！送你一套店铺运营技巧！</li>
+                        <li>开店2个月一单真实成交都没有？那是因为你的运营方法不对！送你一套店铺运营技巧！</li>
+                        <li>开店2个月一单真实成交都没有？那是因为你的运营方法不对！送你一套店铺运营技巧！</li>
+                        <li>开店2个月一单真实成交都没有？那是因为你的运营方法不对！送你一套店铺运营技巧！</li>
+                    </ul>
+                    <div class="div"><em class="ggprev em2"><img src="image/ggprev.png"></em> <b class="usggpage"></b><em class="ggnext em1"><img src="image/ggnext.png"> </em> </div>
+                </div>
+            </div>
+            <div class="centermoney">
+                <div class="div1">
+                    <p class="p1">5,321,400.00</p>
+                    <p class="p2"><img src="image/yue1.png"> 可用余额</p>
+                </div>
+                <div class="div2">
+                    <p class="p1">5,321,400.00</p>
+                    <p class="p2"><img src="image/yue1.png"> 代收款项</p>
+                </div>
+                <div class="div3">
+                    <ul>
+                        <li>
+                            <a href="">资金明细 ></a>
+                        </li>
+                        <li>
+                            <a href="">充值 ></a>
+                        </li>
+                        <li>
+                            <a href="">提现 ></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user-xuqiu">
+                <ul class="user-xqul">
+                    <li>
+                        <a href="">
+                      <div class="s1">
+                        <img src="image/xuqiu1.png">
+                      </div>
+                      <div class="s2">
+                        待付款
+                      </div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="">
+                      <div class="s1">
+                        <img src="image/xuqiu2.png">
+                      </div>
+                      <div class="s2">
+                        交易中
+                      </div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="">
+                      <div class="s1">
+                        <img src="image/xuqiu3.png">
+                      </div>
+                      <div class="s2">
+                        安全设置
+                      </div>
+                       </a>
+                    </li>
+                    <li>
+                        <a href="">
+                      <div class="s1">
+                        <img src="image/xuqiu4.png">
+                      </div>
+                      <div class="s2">
+                        发票索取
+                      </div>
+                       </a>
+                    </li>
+                </ul>
+                <div class="div2">
+                    <div class="noxuqiu">
+                      <a href="">  <img src="image/noxuqiu.jpg"></a>
+                      
+                    </div>
+                    </div>
+                </div>
+                <div class="user_index_active">
+          
+                
+                    <div class="hd">
+                        <ul>
+                            <li class="on"><a href="javascript:void();">淘宝</a></li>
+                            <li class=""><a href="javascript:void();">天猫</a></li>
+                            <li class=""><a href="javascript:void();">京东</a></li>
+                            <li class=""><a href="javascript:void();">其它</a></li>
+                        </ul>
+                    </div>
+                    <div class="user_index_active_bd">
+                   
+                            <div class="bd" >
+                                <div class="item" style="float: left; width: 700px;">
+                                    <div class="item_list">
+                                        <ul>
+                                            <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                       
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item_list">
+                                        <ul>
+                                       <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item_list">
+                                        <ul>
+                                            <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="item" >
+                                    <div class="item_list">
+                                        <ul>
+                                          <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                             <li>
+                                                <div class="fl circle photo"><a href="" target="_blank"><img class="lazy" src="image/capimg.jpg"></a></div>
+                                                <div class="fl con">
+                                                    <div class="clear con_hd"><a href="/buylist/YAC6010235W845.html" target="_blank">2钻，女装服饰店，配合升级，好评98+，卖家无心打理，诚心出售，无虚假售假</a></div>
+                                                    <div class="clear con_bd">
+                                                         <span class="fl from">信用等级：<b><img src="image/s_cap_15.gif"></b></span>
+                                                        <span class="fl from">售价：<b>¥7500</b></span>
+                                                        <span class="fr date">17秒前</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <div class="fr user_in_right">
+                  <div class="div1">
+                      <div class="s1">
+                        <img src="image/user-inrimg1.png">
+                      <p class="p1">全国服务热线</p>
+                      <p class="p2">400-902-9915</p>
+                      <a href="">在线联系客服</a>
+                      </div>
+                        <div class="s2">
+                           <p class="p1">关注店伯乐公众号</p>
+                      <img src="image/erweima.png">
+                      <p class="p2">扫描二维码</p>
+                      <p class="p3">惊喜好礼送不停！</p>
+                        </div>
+                  </div>
+                  <div class="div2">
+                       <img src="image/jubao.jpg">
+                      <p class="p1">如果您发现，您的信息被泄露、服务商或店伯乐员工违规。请联系我们。</p>
+                   
+                      <a href="">点击举报</a>
+           
+                  </div>
+                  <div class="div3">
+                     <div class="swiper-container user3-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user3-banner.jpg);"> </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="" style="background: url(image/user3-banner.jpg);"> </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+        <div class="clear copyright">
+            成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+        </div>
+</body>
+
+</html>

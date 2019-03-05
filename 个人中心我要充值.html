@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>个人中心我要充值</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+            <div class="user-banl">
+                <div class="banktop">
+                    <ul class="banktop-ul">
+                        <li class="active">
+                            <a href="">我要充值</a>
+                        </li>
+                        <li>
+                            <a href="">我要提现</a>
+                        </li>
+                        <li>
+                            <a href="">收支明细</a>
+                        </li>
+                        <li>
+                            <a href="">充值记录</a>
+                        </li>
+                        <li>
+                            <a href="">提现记录</a>
+                        </li>
+                        <li>
+                            <a href="">发票记录</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bddiv2">
+                    <span class="user_bank_nav"><a href="javascript:viod();" >网银充值</a><a href="#" class="active">线下柜台充值</a></span>
+                    <a href=""><img src="image/user_qq.png"> </a>
+                </div>
+                <div class="user_recharge_bd">
+                    <div class="user_recharge_item" style="">
+                        <div class="user_recharge_item_hd">线下柜台充值</div>
+                        <div class="user_recharge_item_bd">
+                            <div class="user_recharge_offline">
+                                <ul>
+                                    <li>
+                                        <p class="pic"><img src="image/bank_5.jpg"></p>
+                                            <p class="info">
+                                                账号户名：成都优伯乐络科技有限公司<br>
+                                                开户地区：招商银行股份有限公司成都分行高新支行<br>
+                                                银行卡号：1289 0776 8310 701
+                                            </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="user_recharge_result">
+                                <div class="user_bankset_form_bd">
+                                    <div class="hd4">请您在银行转账汇款之后，提交以下表单！注意在银行柜台或者ATM机汇款，请拿好您的汇款回执单</div>
+                                    <div class="hd3">您正在为账号"<strong>yd_cahaii</strong>"充值</div>
+                                    <div class="bd">
+                                        <form id="submitpay_form">
+                                            <ul>
+                                                <li>
+                                                    <input type="hidden" name="_token" value="2ERglAcjatPRTcHLSDuWg7utuwSvm3Z6Zc0hyKcz">
+                                                    <span class="fl tit">汇款人姓名：</span>
+                                                    <div class="fl con"><input name="name" type="text" class="inp" placeholder="请输入汇款人姓名"></div>
+                                                </li>
+                                                <li>
+                                                    <input type="hidden" value="/userCenter/depositlist?act=cz" id="submitpay_redirect">
+                                                    <input type="hidden" value="农业银行(企业)" name="selbank">
+                                                    <span class="fl tit">汇款金额：</span>
+                                                    <div class="fl con"><input name="v_amount" type="text" class="inp" onkeyup="if(isNaN(value))execCommand('undo')" placeholder="请输入转账金额"></div>
+                                                </li>
+                                                <li>
+                                                    <span class="fl tit">汇款卡号：</span>
+                                                    <div class="fl con"><input name="payment_account" type="text" class="inp" onkeyup="if(isNaN(value))execCommand('undo')" placeholder="请输入汇款卡号"></div>
+                                                </li>
+                                                <li>
+                                                    <input id="submitpay" type="button" class="combtn" value="提交"><span class="tipsmessage" id="submitpayrst">请仔细核对您的转账信息并填写！</span>
+                                                </li>
+                                                <li>
+                                                    <div class="br5 tips">温馨提示 如在充值上遇到什么问题，可以联系上方的财务客服，客服会指导您充值！</div>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+
+</html>

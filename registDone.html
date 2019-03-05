@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>注册第二步</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <script src="js/plug.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="iconfont/iconfont.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body style="background: #fff;">
+       <header class="account-header">
+        <div class="account-header__inner">
+            <div class="logomid">
+                <a href="/">
+                                    <img src="image/logo1.png" alt="店伯乐—专业网站转让平台">
+                            </a>
+            </div>
+        </div>
+    </header>
+
+
+  <div class="zhucecontent">
+        <!-- 步骤条 -->
+     <!-- 步骤条 -->
+    <div class="steps clearfix">
+      <label class="stepsc"></label>
+      <span class="stepsl"></span>
+      <div class="steps_01">
+        <p>
+          <span>
+            01
+          </span>
+        </p>
+        <p>验证手机号</p>
+      </div>
+      <span class="stepsl"></span>
+      <div class="steps_02">
+        <p>
+          <span>
+            02
+          </span>
+        </p>
+        <p>设置密码</p>
+      </div>
+      <span class="stepsl"></span>
+      <div class="steps_03  on">
+        <p>
+          <span>
+            03
+          </span>
+        </p>
+        <p>注册成功</p>
+      </div>
+      <span class="stepsl"></span>
+      <label class="stepsc"></label>
+    </div>
+
+    <div class="success">
+      <i class="success-icon">
+
+      </i>
+      <p class="success-text">
+        注册成功，
+        <span class="success-text__num">3s</span> 之后跳转至首页！
+      </p>
+    </div>
+  </div>
+   <footer class="account-footer">
+        <div class="account-footer__inner">
+            <ul class="account-footer__link">
+                <li>
+                    <a href="" target="_blank">帮助中心</a>
+                </li>
+                <li>
+                    <a href="" target="_blank">安全保障</a>
+                </li>
+                <li>
+                    <a  href="" target="_blank">客服咨询</a>
+                </li>
+                <li>
+                    <a href="" target="_blank">关于我们</a>
+                </li>
+            </ul>
+            <div class="account-footer__copyright">
+                Copyright 2013-2018 店伯乐 版权所有 蜀ICP备13XXXXX5号 服务热线：电话：400-006-1351
+            </div>
+        </div>
+    </footer>
+      <script src="js/modal.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+      var  _time = 2000;
+      setInterval(function() {
+          if(_time == 2000){
+              $('.success-text__num').text('2s');
+          }else if(_time == 1000){
+              $('.success-text__num').text('1s');
+          }else {
+              window.location.href ='/';
+          }
+          _time -= 1000
+      }, 1000)
+  </script>
+</body>
+
+</html>

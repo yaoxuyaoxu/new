@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>注册</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="Font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <script src="js/plug.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="iconfont/iconfont.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body style="background: #fff;">
+       <header class="account-header">
+        <div class="account-header__inner">
+            <div class="logomid">
+                <a href="/">
+                                    <img src="image/logo1.png" alt="店伯乐—专业网站转让平台">
+                            </a>
+            </div>
+        </div>
+    </header>
+
+
+  <div class="zhucecontent">
+    <h2 class="zcTitle">欢迎注册店伯乐店铺交易平台</h2>
+    <!-- 表单 -->
+    <form action="/" onsubmit="return false" class="register_form">
+      <input type="hidden" id="csrf_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a">
+      <div class="form_mobile form_item">
+        <label for="phone">手机号码</label>
+        <div class="x-input-control">
+          <input id="phone" type="text" placeholder="用于登录和找回密码" maxlength="13" oninput="value=value.replace(/[^\d]/g,'')">
+          <i class="x-input-control--clear"></i>
+        </div>
+      </div>
+      <div class="form_code form_item">
+        <label for="phoneCode">验证码</label>
+        <div class="x-input-control">
+          <input id="phoneCode" type="text" placeholder="请输入验证码" maxlength="8" oninput="value=value.replace(/[^\d]/g,'')">
+          <i class="x-input-control--clear"></i>
+        </div>
+        <button id="codeBtn" class="fr">获取验证码</button>
+      </div>
+    
+      
+      
+        
+        
+        
+          
+        
+      
+      <div class="form_mobile form_item">
+        <label for="password">登录密码</label>
+        <div class="x-input-control">
+        <input id="password" name="pass" type="password" placeholder="请输入6~16位的密码（A-Z、a-z、0-9）"/>
+          <i class="x-input-control--clear"></i>
+        </div>
+      </div>
+      <div class="form_note">
+       <input type="checkbox" id="note" checked>
+        <a href="" target="_blank">
+          我已阅读并同意店伯乐《用户协议》
+        </a>
+      </div>
+      <button type="submit" id="firstSubmit" class="form_submit">下一步</button>
+      <a class="form-login-link" href="/login">已有账号，立即去登录 >></a>
+    </form>
+  </div>
+   <footer class="account-footer">
+        <div class="account-footer__inner">
+            <ul class="account-footer__link">
+                <li>
+                    <a href="" target="_blank">帮助中心</a>
+                </li>
+                <li>
+                    <a href="" target="_blank">安全保障</a>
+                </li>
+                <li>
+                    <a  href="" target="_blank">客服咨询</a>
+                </li>
+                <li>
+                    <a href="" target="_blank">关于我们</a>
+                </li>
+            </ul>
+            <div class="account-footer__copyright">
+                Copyright 2013-2018 店伯乐 版权所有 蜀ICP备13XXXXX5号 服务热线：电话：400-006-1351
+            </div>
+        </div>
+    </footer>
+      <script src="js/modal.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
+
+</html>

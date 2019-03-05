@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>3级淘宝个人店铺详情</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <!-- 砍价弹出层 -->
+    <div class="mask">
+        <div class="mask_box">
+            <div class="mask_content">
+                <div class="mask_content_title clearfix">
+                    <span class="fl">我要砍价</span>
+                    <a class="fr mask_close" href="javascript:;"></a>
+                </div>
+                <!-- 表单内容 -->
+                <div class="mask_form">
+                    <form action="" method="get" accept-charset="utf-8" autocomplete="on">
+                        <div class="mask_form_title">
+                            <p>请输入您的期望价格</p>
+                            <p>卖家报价 : <span>223000元</span></p>
+                        </div>
+                        <div class="mask_form_price mask_form_item clearfix">
+                            <input type="text" id="bargains_price" placeholder="期望价格" class="fl" maxlength="20">
+                            <span class="fr">元</span>
+                        </div>
+                        <p class="mask_form_err mask_form_err1"></p>
+                        <input type="hidden" class="memberid" value="">
+                        <input type="hidden" class="spread" name="spread" value="1">
+                        <input type="text" id="bargains_phone_number" placeholder="请输入您的手机号" class="mask_form_item">
+                        <p class="mask_form_err mask_form_err2"></p>
+                        <a href="javascript:;" class="mask_form_btn" id="bargains_submit">提交</a>
+                    </form>
+                </div>
+                <!-- 提交成功内容 -->
+                <div class="mask_success" style="display: none;">
+                    <img src="/images/add/mask_g.png" alt="">
+                    <p class="mask_text1">提交成功</p>
+                    <p class="mask_text2">您的需求已提交，稍后会有客服与您取得联系，请耐心等待</p>
+                </div>
+                <!-- 提交失败内容 -->
+                <div class="mask_false" style="display: none;">
+                    <img src="/images/add/mask_c.png" alt="">
+                    <p class="mask_text1">网络异常</p>
+                    <p class="mask_text2">网络出现异常，请稍后再试！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 砍价弹出层 -->
+    <script>
+        $(function(){
+            // 打开砍价弹窗
+            $('#white-btns-kj').click(function(){
+                $('.mask').show();
+            })
+            // 关闭砍价
+            function close(){
+                $('.mask').hide();
+                $(".mask_false,.mask_success").hide();
+                $('.mask_form').show();
+            }
+            $('.mask_close').click(function(){
+                close();
+            })
+            // 验证价格
+            function verifyPrice(){
+                var _price=$('.mask_form_price input').val();
+                var str='';
+                var flag=false;
+                if(_price!=parseInt(_price)){
+                    str='请输入整数';
+                }
+                else if(_price.length>20){
+                    str='您输入的字符已达上限';
+                }
+                else{
+                    flag=true;
+                }
+                $('.mask_form_err1').text(str);
+                return flag;
+            }
+            // 验证手机号
+            function verifyTel(){
+                var _tel=$('input.mask_form_item').val();
+                var str='';
+                var flag=false;
+                if(/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|166|19[89])[0-9]{8}$/.test(_tel)){
+                    flag=true
+                }else{
+                    str='请输入正确的手机号'
+                }
+                $('.mask_form_err2').text(str);
+                return flag;
+            }
+            // 价格输入判断
+            $('.mask_form_price input').on('input',function(){
+                verifyPrice();
+            })
+            // 号码区域限定只能输入数字
+            $('input.mask_form_item').on('input',function(){
+                var _val=parseInt($(this).val().trim());
+                if(_val){
+                    $(this).val(_val.toString().substring(0,11))
+                }else{
+                    $(this).val('')
+                }
+            })
+            // 号码失焦后判断      
+            $('input.mask_form_item').on('blur',function(){
+                verifyTel();
+            })
+            // 点击提交
+            $('.mask_form_btn').click(function(){
+                // 验证输入
+                // verifyPrice();
+                // verifyTel();
+                // 输入成功
+                if(verifyPrice()&&verifyTel()){
+                    $('.mask_form').hide();
+                    $.post('/tmall/bargains', {
+                        _token: 'FgclzChNCGUleiKejDkRAhlDsGrjFEXxZJfGvnGp',
+                        goods_id: 173238,
+                        price: parseInt($('.mask_form_price input').val()),
+                        phone_number: $('input.mask_form_item').val(),
+                        memberid: $('input.memberid').val(),
+                        spread: $('.spread').val()
+                    }, function (result) {
+                        if (result.data) {
+                            $(".mask_success").show();
+                        } else {
+                            if (result.msg) {
+                                $('.mask_false > .mask_text1').text('提交失败');
+                                $('.mask_false > .mask_text2').html(result.msg);
+                            }
+                            $(".mask_false").show();
+                        }
+                    }).error(function (xhr) {
+                        var body = JSON.parse(xhr.responseText);
+                        var msg;
+                        $.each(body, function (i, item) {
+                            msg = item.join('<br />');
+                        });
+                        $('.mask_false > .mask_text1').text('提交失败');
+                        $('.mask_false > .mask_text2').html(msg);
+                        $(".mask_false").show();
+                    });
+
+                    // 清空表单内容
+                    $('.mask_form_price input').val('');
+                    $('input.mask_form_item').val('');
+
+                    // 3s后关闭砍价
+                    setTimeout(() => {
+                        close();
+                }, 3000);
+                }
+            })
+        })
+    </script>
+   
+    <div class="cata">
+        <div class="main clearfix cata_main">
+            <p class="cata_step fl"><a> 当前位置 ： </a><a href="">淘宝网店 </a>&gt;<a href="">三钻淘宝网店转让 </a>&gt;<a href="" class="on">三钻淘宝店铺服饰鞋包主营 本人注册 可以升级 无扣分及历史售假 好评...</a></p>
+        </div>
+    </div>
+    <div class="aspect main clearfix">
+        <div class="aspect_left fl">
+            <div class="aspect_basic tmall">
+                <div class="content_left">
+                    <h3 class="one-txt-cut content_title">
+                        <img src="image/logo_1.png" alt="">
+                        <span>华南地区宠物用品旗舰店，新店，店铺干净，一般纳税人，挂靠地址，店铺无扣分无贷款，卖家诚意出售。</span>
+                    </h3>
+                    <p class="content_intro">
+                        <a href="javascript:;" class="one-txt-cut content_intro_detail_a "><span>卖家描述：</span>珠三角地区宠物用品旗舰店，新店，店铺干净，一般纳税人，挂靠地址，店铺无扣分无贷款，卖家诚意出售。
+                            <span class="hide_more"> &lt;收起&gt;</span></a>
+                    </p>
+                </div>
+                <div class="gray-part after-line gray-part01">
+                    <ul class="aspect_lists clearfix">
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>网店类型</p>
+                                <h3>淘宝网店 </h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>主营类目</p>
+                                <h3>生活服务</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>店铺等级</p>
+                                <h3 title="18类"><img src="image/s_cap_33.gif"> </h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>好评率</p>
+                                <h3>>99.9% </h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>收藏人气</p>
+                                <h3>>2000</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>所在地区</p>
+                                <h3>华东地区</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>店铺资质</p>
+                                <h3><img src="image/tag_1.png"></h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>虚拟占比</p>
+                                <h3> 0% </h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>主营占比</p>
+                                <h3>>6%
+                        </h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>提供货源</p>
+                                <h3>否</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>团队转让</p>
+                                <h3>是</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>一般违规</p>
+                                <h3>0分</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>严重违规</p>
+                                <h3>0分</h3>
+                            </div>
+                        </li>
+                        <li class="aspect_list fl">
+                            <div class="tip_list">
+                                <p>售假违规</p>
+                                <h3>0分</h3>
+                            </div>
+                        </li>
+                    </ul>
+               
+                    <ul class="dynamic_lists gray-lists clearfix">
+                        <li class="dynamic_list fl">
+                            <div class="tip_list clearfix">
+                                <p class="fl tip-list-left ">宝贝与描述</p>
+                                <h2 class="dynamic_line rank_low fl">
+                                <span class="rank_compare">比同行业平均水平</span>
+                                <span class="rank">低</span>
+                            </h2>
+                            </div>
+                        </li>
+                        <li class="dynamic_list fl">
+                            <div class="tip_list">
+                                <p class="fl tip-list-left ">卖家服务态度</p>
+                                <h2 class="dynamic_line rank_high">
+                                <span class="rank_compare">比同行业平均水平</span>
+                                <span class="rank">高</span>
+                            </h2>
+                            </div>
+                        </li>
+                        <li class="dynamic_list fl">
+                            <div class="tip_list">
+                                <p class="fl tip-list-left ">卖家发货速度</p>
+                                <h2 class="dynamic_line rank_high">
+                                <span class="rank_compare">比同行业平均水平</span>
+                                <span class="rank">高</span>
+                            </h2>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="white-num">
+                    <span class="commodity_list">
+                    <i class="commodity_name">网店编号</i>
+                    <i class="commodity_num">600153459937114Y0101QAC5</i>
+                </span>
+                    <span class="commodity_list">
+                    <i class="commodity_name">状态</i>
+                    <i class="commodity_num commodity_onred">
+                      在售
+                      </i>
+                </span>
+                    <span class="commodity_list commodity_style">
+                    <i class="commodity_name">交易方式</i>
+                    <i class="commodity_num">线下当面交易</i>
+                </span>
+                    <span class="commodity_list">
+                    <i class="commodity_name">发布时间</i>
+                    <i class="commodity_num">刚刚</i>
+                </span>
+                </div>
+                <div class="divcon-zd">
+                    <div class="div1">
+                        <img src="image/brand1.jpg">
+            </div>
+                        <div class="div2">
+                            <h4>价格详情</h4>
+                            <div class="nsw1">
+                                <div class="s1">
+                                    <p class="p1"><small>网店出售价格</small><i>￥</i><b>55.60万</b> </p>
+                                    <p class="p2"><small>消费者保证金</small><i>￥</i><b>1000</b><em>（需退还）</em> </p>
+                                </div>
+                                <div class="s2">
+                                    <a href=""><img src="image/star_1.png"> 收藏</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-btns">
+                        <a class="white-btns-fund" href="javascript:;">立即购买</a>
+                        <a class="white-btns-dj"  href="javascript:;">支付定金</a>
+                       
+                    </div>
+                    <div class="white-small">
+                        <ul class="commodity_mess provide_lists clearfix">
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_1.png" alt="">
+                            签署合同
+                        </li>
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_2.png" alt="">
+                            担保交易
+                        </li>
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_3.png" alt="">
+                            提供证件
+                        </li>
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_4.png" alt="">
+                            极速放款
+                        </li>
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_5.png" alt="">
+                            支持线下
+                        </li>
+                            <li class="provide_list fl">
+                                <img src="http://www.yidian51.com/images/list_img/pro_6.png" alt="">
+                            确认后放款
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aspect_right fr">
+            <div class="right-hook" style="">
+                <div class="yi-header">
+                    <div class="header_tips">咨询在线客服</div>
+                    <div class="yi-shelter">
+                        <span>
+                            <img src="image/ren1.png"  alt="">
+                        </span>
+                    </div>
+                    <p class="yi-position">资深天猫顾问-陈琴</p>
+                    <div class="yi-score">
+                    <span class="yi-star">
+                         <i><img src="http://www.yidian51.com/images/change/star-1.png" alt=""></i>
+                         <i><img src="http://www.yidian51.com/images/change/star-1.png" alt=""></i>
+                         <i><img src="http://www.yidian51.com/images/change/star-1.png" alt=""></i>
+                         <i><img src="http://www.yidian51.com/images/change/star-1.png" alt=""></i>
+                         <i><img src="http://www.yidian51.com/images/change/star-2.png" alt=""></i>
+                    </span>
+                    <span class="yi-num">
+                      9.8
+                    </span>
+                    </div>
+                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3003535203&amp;site=qq&amp;menu=yes" target="'_blank'" onclick="write_record(3003535203,0);_hmt.push(['_trackEvent','connect','qq','tmall']);" rel="nofollow" class="yi-contact">
+                        <img src="image/qq.png" alt="">
+                        联系在线客服
+                    </a>
+                </div>
+                <div class="yi-phone">
+                    <p><span>电话咨询：</span><i>18232165487</i></p>
+                    <p><span>联系Q Q：</span><i>3003535203</i></p>
+                </div>
+
+                <!-- 2018.5.15新增 -->
+                <ul class="yi-kf clearfix">
+                                                                        <li>
+                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3002996136&amp;site=qq&amp;menu=yes" target="'_blank'" onclick="write_record(3002996136,0);_hmt.push(['_trackEvent','connect','qq','other']);" rel="nofollow">
+                                    <div class="yi-kf1">
+                                        <img src="image/ren2.png" onerror="this.src=&quot;https://cdn.yidian51.com/upfile/2014-08/service_20140821_4c9d0fc55ee600a561d763b20b5d6ed8.jpg&quot;" alt="">
+                                    </div>
+                                    <div class="yi-kf2">
+                                        <p>天猫顾问-王梅</p>
+                                        <p>QQ: 3002996136</p>
+                                    </div>
+                                    <div class="yi-kf3">
+                                        <i></i>
+                                        <span>沟通</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3003473382&amp;site=qq&amp;menu=yes" target="'_blank'" onclick="write_record(3003473382,0);_hmt.push(['_trackEvent','connect','qq','other']);" rel="nofollow">
+                                    <div class="yi-kf1">
+                                        <img src="image/ren2.png" onerror="this.src=&quot;https://cdn.yidian51.com/upfile/2014-08/service_20140821_4c9d0fc55ee600a561d763b20b5d6ed8.jpg&quot;" alt="">
+                                    </div>
+                                    <div class="yi-kf2">
+                                        <p>天猫顾问-李林玉</p>
+                                        <p>QQ: 3003473382</p>
+                                    </div>
+                                    <div class="yi-kf3">
+                                        <i></i>
+                                        <span>沟通</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                            </ul>
+                <!-- 2018.5.15新增 end-->
+
+                <ul class="yi-zhu clearfix">
+                    <li class="fl yi-zhu-left">
+                        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2881876668&amp;site=qq&amp;menu=yes" target="'_blank'" onclick="write_record(2881876668,0);_hmt.push(['_trackEvent','connect','qq','taobao']);" rel="nofollow" class="fl service_super_a">联系主管</a></li>
+                    <li class="fl yi-zhu-right"><a href="/message/comment_12378.html">投诉建议</a></li>
+                </ul>
+              
+                </div>
+            </div>
+
+            <script>
+                //右侧ta的推荐
+                jQuery(".yi-he").slide({
+                    mainCell: ".ta-slide .bd .ta-bd-lists",
+                    autoPlay: false,
+                    effect:"leftLoop",
+                    startFun: function(){
+                        $('.ta-letter').dotdotdot({
+                            wrap: 'letter'
+                        });
+                    }
+                });
+            </script>
+
+        </div>
+
+        <div class="main clearfix">
+              <div class="lcul2 ">
+                <ul>
+                    <li>
+                        <p><img src="image/lcico1.png" class="img1">1.选择网店<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                    <li>
+                        <p><img src="image/lcico2.png" class="img1">2.支付订单<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                    <li>
+                        <p><img src="image/lcico3.png" class="img1">3.核对信息<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                    <li>
+                        <p><img src="image/lcico4.png" class="img1">4.签署合同<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                    <li>
+                        <p><img src="image/lcico5.png" class="img1">5.交接过户<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                    <li class="on">
+                        <p><img src="image/lcico6.png" class="img1">6.交易成功<img src="image/jiantou3.png" class="img2"> </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+            <div class="main clearfix">
+                 <div class="item_con">
+                <div class="item_top">
+                    <div class="item_lists">
+                        <a href="#pictures" class="item_list fl"  style="display: none;">网店图片</a>
+                        <a href="#feature" class="item_list fl">网店特色</a>
+                        <a href="#estimate" class="item_list fl">费用预估</a>
+                        <!--    <a href="#purchase" class="item_list fl">购买流程</a> -->
+                        <a href="#enjoy" class="item_list fl">相关推荐</a>
+                        <a href="#help" class="item_list fl">帮助</a>
+                    </div>
+                </div>
+                <div class="item_special">
+                    <div class="pictures">
+                        <!-- 设置锚点的空标签 -->
+                        <div id="pictures"></div>
+                        <div class="feature_title clearfix" style="display: none;">
+                            <span class="fl">网店图片</span>
+                        </div>
+                        <ul class="picture_lsits clearfix">
+                            <li class="picture_list fl" style="display: none;">
+                            </li>
+                        </ul>
+                       
+                    </div>
+                    <div class="feature">
+                        <!-- 设置锚点的空标签 -->
+                        <div id="feature"></div>
+                        <div class="feature_title clearfix">
+                            <span class="fl">网店特色</span>
+                            <a href= http://wpa.qq.com/msgrd?v=3&amp;uin=2881143669&amp;site=qq&amp;menu=yes target=&#039;_blank&#039; onclick=write_record(2881143669,0);_hmt.push([&#039;_trackEvent&#039;,&#039;connect&#039;,&#039;qq&#039;,&#039;tmall&#039;]); rel=nofollow class="fr">更多特色联系客服>></a>
+                        </div>
+                        <ul class="feature_lists">
+                            <li class="feature_list clearfix">
+                                <span class="feature_list_name fl">网店标签</span>
+                                <div class="feature_list_box fl">
+                                    <div class="feature_list_con">
+                                        <span class="feature_list_tip pink">无任何扣分</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="feature_list clearfix espiclist">
+                                <span class="feature_list_name fl">核心卖点</span>
+                                <div class="feature_list_box fl">
+                                    <div class="feature_list_con">
+                                        <p class="feature_list_text">新店，店铺干净</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="feature_list clearfix espiclist">
+                                <span class="feature_list_name fl">网店介绍</span>
+                                <div class="feature_list_box fl">
+                                    <div class="feature_list_con">
+                                        <p class="feature_list_text one-txt-cut">
+                                            珠三角地区宠物用品旗舰店，新店，店铺干净，一般纳税人，挂靠地址，店铺无扣分无贷款，卖家诚意出售。
+                                            <span class="shou_more"> &lt;收起&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <script>
+                            $('.feature_list .zhan_more').click(function() {
+                                $(this).parents('.feature_list').find('.feature_list_text').removeClass('one-txt-cut');
+                            });
+                            $('.feature_list .shou_more').click(function() {
+                                $(this).parents('.feature_list').find('.feature_list_text').addClass('one-txt-cut');
+                            });
+                            </script>
+                        </ul>
+                    </div>
+                    <div class="estimate">
+                        <!-- 设置锚点的空标签 -->
+                        <div id="estimate"></div>
+                        <div class="feature_title clearfix">
+                            <span class="fl">费用预估</span>
+                        </div>
+                        <div class="estimate_con clearfix">
+                            <div class="estimate_left fl">
+                                <ul class="eatimate_lists">
+                                    <li class="eatimate_list clearfix eatimate_first">
+                                        <span class="fl">总计费用</span>
+                                        <i>￥50000</i>
+                                    </li>
+                                    <li class="eatimate_list clearfix">
+                                        <span class="fl">网店售价</span>
+                                        <i>￥50000</i>
+                                    </li>
+                                    <li class="eatimate_list clearfix">
+                                        <span class="fl">消保金</span>
+                                        <i>￥50000</i>
+                                    </li>
+                                    <li class="eatimate_list clearfix">
+                                        <span class="fl">技术年费</span>
+                                        <i>￥50000</i>
+                                    </li>
+                                    <li class="eatimate_list clearfix">
+                                        <span class="fl">居间费</span>
+                                        <i>￥50000</i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="estimate_right fl">
+                                <div id="main" style="width: 450px;height:250px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trade" id="trade">
+                        <div class="feature_title">
+                            <span>最近天猫转让成交记录</span>
+                            <i>仅展示最近成交的三条记录</i>
+                        </div>
+                        <div class="trade_lists">
+                            <p class="trade_title clearfix">
+                                <span class="trade_name fl">标题</span>
+                                <span class="trade_message  fl">网店信息</span>
+                                <span class="trade_price  fl">价格</span>
+                            </p>
+                            <ul>
+                                     <li class="trade_list clearfix">
+                                    <div class="trade_name fl">
+                                        <span class="trade_box">
+                                            <a class="trade_h3 letter" href="" target="_blank"><img src="image/logo_2.png" alt=""/>华中地区，类目开通：男女鞋，男女装，内衣，箱包，服饰配件7大类目全开 动态全红，小规模纳税，店铺正常经营，诚心出售。</a>
+                                                </span>
+                                    </div>
+                                    <div class="trade_message fl">
+                                        <span class="trade_box">
+                                                     <div class="trade_message_list clearfix">
+                                                         <span class="fl">店铺等级：<img src="image/s_cap_33.gif"> </span>
+                                   
+                                        <span class="fl">地区： 华中 </span>
+                                    </div>
+                                    </span>
+                        </div>
+                        <div class="trade_price fl">
+                            <span class="trade_box">
+                                                        <p class="trade_price_money">￥2000</p>
+                                                        <span class="trade_price_date">  50分钟前</span>
+                            </span>
+                        </div>
+                        </li>
+                        <li class="trade_list clearfix">
+                            <div class="trade_name fl">
+                                <span class="trade_box">
+                                            <a class="trade_h3 letter" href="" target="_blank"><img src="image/logo_2.png" alt=""/>华中地区，类目开通：男女鞋，男女装，内衣，箱包，服饰配件7大类目全开 动态全红，小规模纳税，店铺正常经营，诚心出售。</a>
+                                                </span>
+                            </div>
+                            <div class="trade_message fl">
+                                <span class="trade_box">
+                                                     <div class="trade_message_list clearfix">
+                                                         <span class="fl">店铺等级：<img src="image/s_cap_33.gif"> </span>
+                         
+                                <span class="fl">地区： 华中 </span>
+                            </div>
+                            </span>
+                    </div>
+                    <div class="trade_price fl">
+                        <span class="trade_box">
+                                                        <p class="trade_price_money">￥2000</p>
+                                                        <span class="trade_price_date">  50分钟前</span>
+                        </span>
+                    </div>
+                    </li>
+                    <li class="trade_list clearfix">
+                        <div class="trade_name fl">
+                            <span class="trade_box">
+                                            <a class="trade_h3 letter" href="" target="_blank"><img src="image/logo_2.png" alt=""/>华中地区，类目开通：男女鞋，男女装，内衣，箱包，服饰配件7大类目全开 动态全红，小规模纳税，店铺正常经营，诚心出售。</a>
+                                                </span>
+                        </div>
+                        <div class="trade_message fl">
+                            <span class="trade_box">
+                            <div class="trade_message_list clearfix">
+                               <span class="fl">店铺等级：<img src="image/s_cap_33.gif"> </span>
+                         
+                        
+                            <span class="fl">地区： 华中 </span>
+                        </div>
+                        </span>
+                </div>
+                <div class="trade_price fl">
+                    <span class="trade_box">
+                                                        <p class="trade_price_money">￥2000</p>
+                                                        <span class="trade_price_date">  50分钟前</span>
+                    </span>
+                </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+            </div>
+          
+           
+    <!--帮助中心-->
+    <div class="help main clearfix">
+        <!--设置锚点的空标签-->
+        <div id="help"></div>
+        <div class="help_left fl">
+            <h3 class="help_title">帮助<a class="fr" href="">去帮助中心&gt;&gt;</a></h3>
+            <ul class="help_lists">
+                <li class="help_list">
+                    <div class="help_question clearfix">
+                        <span class="fl"><img src="image/help_1.png" alt=""></span>
+                        <a target="_blank" href="" class="fr help_content">一般纳税人是不是比小规模的税点更高？</a>
+                    </div>
+                    <div class="help_answer clearfix">
+                        <span class="fl"><img src="image/help_2.png" alt=""></span>
+                        <span class="fr letter help_content" style="word-wrap: break-word;">
+    亲&nbsp;小规模纳税点是3%；一般纳税人的税点是17%，门面上看似一般纳税人的税... <a target="_blank" href="" style="display: inline;">&lt;详情&gt;</a></span>
+                    </div>
+                </li>
+                <li class="help_list">
+                    <div class="help_question clearfix">
+                        <span class="fl"><img src="image/help_1.png" alt=""></span>
+                        <a target="_blank" href="" class="fr help_content">天猫商城转让服务费怎么收取？</a>
+                    </div>
+                    <div class="help_answer clearfix">
+                        <span class="fl"><img src="image/help_2.png" alt=""></span>
+                        <span class="fr letter help_content" style="word-wrap: break-word;">
+    您好&nbsp;亲！我们店伯乐平台的服务费&nbsp;是按你们出售店铺最终成交价的10%来收取... <a target="_blank" href="" style="display: inline;">&lt;详情&gt;</a></span>
+                    </div>
+                </li>
+                <li class="help_list">
+                    <div class="help_question clearfix">
+                        <span class="fl"><img src="image/help_1.png" alt=""></span>
+                        <a target="_blank" href="" class="fr help_content">成功挂售天猫商城后，何时能找到买家？</a>
+                    </div>
+                    <div class="help_answer clearfix">
+                        <span class="fl"><img src="image/help_2.png" alt=""></span>
+                        <span class="fr letter help_content" style="word-wrap: break-word;">
+    您好&nbsp;亲！这个需要看您店铺的综合评分、商品类目、出售价格等；比如男女装类... <a target="_blank" href="" style="display: inline;">&lt;详情&gt;</a></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="help_right fr">
+            <ul class="changeVideo">
+                <li class="active">出售</li>
+                <li>购买</li>
+                <li>天猫</li>
+                <li>安全</li>
+            </ul>
+            <div class="help_videoM">
+                <div class="help_video videoActive">
+                    <a href="javascript:startplay();" ><img src="image/video.jpg"></a>
+                </div>
+                <div class="help_video">
+                    <a href="javascript:startplay();" ><img src="image/video.jpg"></a>
+                </div>
+                <div class="help_video">
+                    <a href="javascript:startplay();" ><img src="image/video.jpg"></a>
+                </div>
+                <div class="help_video">
+                    <a href="javascript:startplay();" ><img src="image/video.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--帮助中心-->
+ <!--相关推荐-->
+       <div class="more_like main">
+              
+                <p class="more_guess">
+                    相关推荐
+                </p>
+                
+                <ul class="taobao-xh">
+                    <li class="taobao-xhli">
+                        <a href="">
+                            <div class="s1">
+                                <img src="image/s_cap_30.png" class="img">
+                                <p class="p1">08年女装五钻冠老店，动态全红，带货升级...</p>
+                                <p class="p2"><img src="image/s_cap_14.gif"></p>
+                            </div>
+                            <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                  <div class="good_price fl">
+                                <i>￥</i>
+                                <span class="sp2">20700</span>
+                            </div>
+                            <li class="tip_list fr">
+                                    <p>网店信誉</p>
+                                    <h3>>10000 </h3>
+                                </li>
+                                <li class="tip_list fr">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                
+                            </ul>
+                          
+                        </div>
+                        <div class="s3">
+                            <p class="p1">卖家描述：08年服饰鞋包1冠老店，动态全红，好评...</p>
+                            <p class="p2">查看详情</p>
+                        </div>
+                        </a>
+                    </li>
+                      <li class="taobao-xhli">
+                        <a href="">
+                            <div class="s1">
+                                <img src="image/s_cap_30.png" class="img">
+                                <p class="p1">08年女装五钻冠老店，动态全红，带货升级...</p>
+                                <p class="p2"><img src="image/s_cap_14.gif"></p>
+                            </div>
+                            <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                  <div class="good_price fl">
+                                <i>￥</i>
+                                <span class="sp2">20700</span>
+                            </div>
+                            <li class="tip_list fr">
+                                    <p>网店信誉</p>
+                                    <h3>>10000 </h3>
+                                </li>
+                                <li class="tip_list fr">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                
+                            </ul>
+                          
+                        </div>
+                        <div class="s3">
+                            <p class="p1">卖家描述：08年服饰鞋包1冠老店，动态全红，好评...</p>
+                            <p class="p2">查看详情</p>
+                        </div>
+                        </a>
+                    </li>
+                      <li class="taobao-xhli">
+                        <a href="">
+                            <div class="s1">
+                                <img src="image/s_cap_30.png" class="img">
+                                <p class="p1">08年女装五钻冠老店，动态全红，带货升级...</p>
+                                <p class="p2"><img src="image/s_cap_14.gif"></p>
+                            </div>
+                            <div class="more_con">
+                            <ul class="tip_lists clearfix fl">
+                                  <div class="good_price fl">
+                                <i>￥</i>
+                                <span class="sp2">20700</span>
+                            </div>
+                            <li class="tip_list fr">
+                                    <p>网店信誉</p>
+                                    <h3>>10000 </h3>
+                                </li>
+                                <li class="tip_list fr">
+                                    <p>主营类目</p>
+                                    <h3>服饰鞋包</h3>
+                                </li>
+                                
+                            </ul>
+                          
+                        </div>
+                        <div class="s3">
+                            <p class="p1">卖家描述：08年服饰鞋包1冠老店，动态全红，好评...</p>
+                            <p class="p2">查看详情</p>
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+                   
+                
+            </div>
+ <!--相关推荐-->
+
+
+
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+    
+        var price1 = "333000";
+        var price2 = "100000";
+        var price3 = "30000";
+        var price4 = "33300";
+
+         var datajson = {
+            list1: [
+                {
+                    name: '网店售价',
+                    value: price1
+                },
+                {
+                    name: '消保金',
+                    value: price2
+                },
+                {
+                    name: '技术年费',
+                    value: price3
+                },
+                {
+                    name: '居间费',
+                    value: price4
+                }]
+        };
+
+        var brower = [], names = [];
+        for (var i in datajson.list1) {
+            names.push(datajson.list1[i].name);
+            brower.push({
+                name: datajson.list1[i].name,
+                value: datajson.list1[i].value
+            })
+        }
+
+        var myChart;
+
+        function echartStr(names, brower) {
+            // 基于准备好的dom，初始化echarts实例
+            if (myChart != null && myChart != "" && myChart != undefined) {
+                myChart.dispose();
+            }
+            myChart = echarts.init(document.getElementById('main'));
+            // 指定图表的配置项和数据
+            var option = {
+                //          title : {
+                //              text: '某站点用户访问来源',
+                //              subtext: '纯属虚构',
+                //              x:'center'
+                //          },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}<br/>{c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 320,
+                    y: 50,
+                    itemWidth: 15,
+                    itemHeight: 15,
+                    borderRadius: 15,
+                    textStyle: {
+                        color: '#1e1e1e',
+                        fontSize: 14
+                    },
+                    data: names
+                },
+                series: [
+                    {
+//                  name: '访问来源',
+                        type: 'pie',
+                        radius: '70%',
+                        center: ['35%', '50%'],
+                        data: brower,
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: false
+                            }
+                        }
+                    }
+                ],
+                color: [
+                    'rgb(232,56,45)',
+                    'rgb(55,224,69)',
+                    'rgb(46,164,223)',
+                    'rgb(233,206,57)'
+                ]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+        echartStr(names, brower);
+</script>
+</html>

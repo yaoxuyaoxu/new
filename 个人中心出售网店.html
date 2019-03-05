@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>个人中心出售网店</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+            <form id="dopub_form">
+                <div class="pub_reg_form_bd">
+                    <input type="hidden" name="_token" value="2ERglAcjatPRTcHLSDuWg7utuwSvm3Z6Zc0hyKcz">
+                    <div class="transfer_info">
+                        <div class="transfer_info_tit">网店转让信息填写</div>
+                        <div class="item">
+                            <div class="fl item_tit">选择发布网店类型：</div>
+                            <div class="fl item_con">
+                                <div class="br10 select">
+                                    <select name="shop[third_party]" id="type">
+                                        <option value="">请选择网店类型</option>
+                                        <option value="1">——天猫商城</option>
+                                        <option value="2">——淘宝网店</option>
+                                        <option value="3">——京东商城</option>
+                                        <option value="4">——蘑菇街</option>
+                                        <option value="5">——阿里巴巴</option>
+                                        <option value="7">——1号店</option>
+                                        <option value="8">——国美在线</option>
+                                        <option value="9">——苏宁易购</option>
+                                        <option value="15">——楚楚街</option>
+                                        <option value="16">——贝贝网</option>
+                                        <option value="17">——折800</option>
+                                        <option value="19">——聚美</option>
+                                        <option value="20">——拼多多</option>
+                                        <option value="25">——卷皮</option>
+                                        <option value="26">——小红书</option>
+                                        <option value="27">——网易考拉</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" id="as" style="display:none;">
+                            <div class="fl item_tit">选择出售方式：</div>
+                            <div class="fl item_con">
+                                <div class="br10 select">
+                                    <select name="shop[sales_method]">
+                                        <option value="1">——正常出售</option>
+                                        <option value="2">——独家出售</option>
+                                        <option value="3">——抢购</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">发布网店标题：</div>
+                            <div class="fl item_con">
+                                <input name="shop[title]" type="text" class="br10 inp" placeholder="输入您的出售标题" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">发布网店描述：</div>
+                            <div class="fl item_con">
+                                <textarea name="shop[description]" cols="" rows="" class="br10" placeholder="详细的店铺描述，会让买家认为您是诚心实意，有利您店铺快速出售，您可以写您店铺出售的原因，店铺的优势，您可以给购买者提供什么等等信息。"></textarea>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">网店网址：</div>
+                            <div class="fl item_con">
+                                <input name="shop[shopurl]" type="text" class="br10 inp" placeholder="输入您的网店网址" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">网店会员名：</div>
+                            <div class="fl item_con">
+                                <input name="shop[shopkeeper]" type="text" class="br10 inp" placeholder="输入您的网店会员名" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">网店售价（元）：</div>
+                            <div class="fl item_con">
+                                <input name="shop[price]" type="text" class="br10 inp inp_2" onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" placeholder="输入您理想的出售价格" />
+                            </div>
+                        </div>
+                        <div class="item" id="tech_cost">
+                            <div class="fl item_tit">技术年费：</div>
+                            <div class="fl item_con">
+                                <input name="assist[technical_services]" type="text" class="br10  fl inp inp_3" placeholder="网店技术年费金额" onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" value="0" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="fl item_tit">消保金金额：</div>
+                            <div class="fl item_con">
+                                <input name="shop[bidbond]" type="text" class="br10  fl inp inp_3" placeholder="网店消保金金额" onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" value="0" />
+                            </div>
+                        </div>
+                        <div class="item item_2">
+                            <div class="fl item_tit">店铺扣分情况：</div>
+                            <div class="fl item_con"><span class="text_block">一般违规扣分：
+                <input name="assist[outorder1]" type="text" class="br10 inp inp_4"
+                       onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" />
+                分</span><span class="text_block">严重违规扣分：
+                <input name="assist[outorder2]" type="text" class="br10 inp inp_4"
+                       onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" />
+                分</span><span class="text_block">售假违规扣分：
+                <input name="assist[outorder3]" type="text" class="br10 inp inp_4"
+                       onkeyup="this.value=this.value.replace(/[^0-9]/ig,'');" />
+                分</span></div>
+                        </div>
+                        <div class="item item_2">
+                            <div class="fl item_tit">店铺认证状态：</div>
+                            <div class="fl item_con">
+                                <div class="label_item label_item_2">
+                                    <label class="radio-label on">
+                                        <input name="shop[isself]" checked="checked" type="radio" value="1">
+                                        &nbsp;个人身份证认证</label>
+                                    <label class="radio-label">
+                                        <input name="shop[isself]" type="radio" value="0">
+                                        &nbsp;企业名义认证</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item_2">
+                            <div class="fl item_tit">可提供证件照：</div>
+                            <div class="fl item_con">
+                                <div class="label_item label_item_4">
+                                    <label class="check-label on">
+                                        <input name="assist[sfzf]" type="checkbox" checked="checked" value="1">
+                                        &nbsp;身份证正面反面</label>
+                                    <label class="check-label">
+                                        <input name="assist[scss]" type="checkbox" value="1">
+                                        &nbsp;个人半身照</label>
+                                    <label class="check-label">
+                                        <input name="assist[scsf]" type="checkbox" value="1">
+                                        &nbsp;手持身份证</label>
+                                    <label class="check-label">
+                                        <input name="assist[hkbz]" type="checkbox" value="1">
+                                        &nbsp;户口本</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="regform">
+                        <div class="regform_bd">
+                            <div class="item">
+                                <p style="font-size:16px;">店铺成交后我们将收取售价的10%的服务费，如售价为10000，我们将收取1000的服务费</p>
+                                <div class="submit">
+                                    <input type="hidden" value="/userCenter/shop?act=shz" id="dopub_redirect" />
+                                    <input id="dopub" type="button" class="combtn combtntjwd" value="立即发布" />
+                                    <span class="tipsmessage" id="dopubrst">请认真填写网店信息</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+
+</html>

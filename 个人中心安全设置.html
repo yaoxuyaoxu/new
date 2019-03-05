@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>个人中心安全设置</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+   
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="fr user_right">
+        <div class="clear user_nav"><a href="#" class="active"><img src="image/diandian.png"> 安全设置</a></div>
+        <div class="user_safe_hd"><span class="safe_level_txt">您的账户安全等级:</span>
+                        <span class="br20 safe_level_bd"><i style="width:30%" class="br20"></i></span>
+            <span class="safe_level_status lower">很低</span>
+                    </div>
+
+        <div class="user_safe_tit">安全服务</div>
+        <div class="user_safe_bd">
+            <div class="item">
+                <div class="item_hd"><span class="fl tit">登录密码</span><span class="fl status status_1">已设置</span><span
+                            class="fl con">安全性高的密码可以使账号更安全。建议您定期更换密码。</span><span class="fr edit"><a
+                                href="javascript:void(0)">修 改<img src="image/user_arrow_2.png"> </a></span></div>
+                <div class="item_bd">
+                    <div class="item_form">
+                        <form id="ajaxform" onsubmit="return false">
+
+
+                            <ul>
+
+                                <li><span class="fl tit">旧密码：</span>
+                                    <div class="fl con"><input id="nowpas" type="password" class="inp"
+                                                               placeholder="请输入当前登录密码"/></div>
+                                </li>
+                                <li><span class="fl tit">新密码：</span>
+                                    <div class="fl con"><input id="newpas" type="password" class="inp" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')" onpaste="return false"
+                                                               placeholder="请输入新密码"/></div>
+                                </li>
+                                <li><span class="fl tit">重复新密码：</span>
+                                    <div class="fl con"><input id="newpas2" type="password" class="inp" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')" onpaste="return false"
+                                                               placeholder="请确认新密码"/></div>
+                                </li>
+                                <li><input id="setpassword1" type="submit" class="combtn" value="提 交"/><span
+                                            class="tipsmessage" id="setpasswordrst">大小写字母数字组合！</span><span
+                                            class="success" id="setpasswordrst_1" style="display:none;"></span></li>
+                            </ul>
+                        </form>
+                    </div>
+                    <script>
+                        $('#setpassword1').click(function () {
+                            $.post('/userCenter/ajax/setpassword', {
+                                nowpas: $('#nowpas').val(),
+                                newpas: $('#newpas').val(),
+                                newpas2: $('#newpas2').val(),
+                                _token: "a7foPJsmbNIOyOe242oCFeoK2aHiPFsBHMGFnmN8"
+                            }, function (result) {
+                                if (result.status == '200') {
+                                    layer.msg(result.msg, {icon: 1});
+//                                    alert(result.msg);
+                                    window.location.href = result.jumpUrl;
+                                    // location.reload();
+                                } else {
+                                    $('#setpassword').removeAttr('disabled');
+                                    $('#setpasswordrst_1').hide();
+                                    $('#setpasswordrst').html(result);
+                                    $('#setpasswordrst').show();
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="item_hd"><span class="fl tit">支付密码</span><span class="fl status status_1">已设置</span><span
+                            class="fl con">建议您定期更换支付密码，且不同与登录密码，保障资金安全。</span><span class="fr edit"><a
+                                href="javascript:void(0)">修 改<img src="image/user_arrow_2.png"></a></span></div>
+                <div class="item_bd">
+                    <div class="item_form">
+                        <form id="setpasspas_form">
+                            <input type="hidden" name="_token" value="a7foPJsmbNIOyOe242oCFeoK2aHiPFsBHMGFnmN8">
+                            <ul>
+                                <li><span class="fl tit">新密码：</span>
+                                    <div class="fl con"><input name="newpas" type="password" class="inp"
+                                                               placeholder="请输入新密码"/></div>
+                                </li>
+                                <li><span class="fl tit">重复新密码：</span>
+                                    <div class="fl con"><input name="newpas2" type="password" class="inp"
+                                                               placeholder="请确认新密码"/></div>
+                                </li>
+                                <li><span class="fl tit">校验码：</span>
+                                    <div class="fl con"><input name="vcode" type="text" class="fl inp inp2"
+                                                               placeholder="校验码"/><span class="getmessage"><a
+                                                    href="javascript:sendsms('paypass','重新获取校验码','setpasspasrst','a7foPJsmbNIOyOe242oCFeoK2aHiPFsBHMGFnmN8');"
+                                                    id="sendsmsmsg">免费获取校验码</a></span></div>
+                                </li>
+                                <li>
+                                    <input type="hidden" name="_token" value="a7foPJsmbNIOyOe242oCFeoK2aHiPFsBHMGFnmN8"/>
+                                    <input id="setpasspas" type="button" class="combtn" value="提 交"/><span
+                                            class="tipsmessage" id="setpasspasrst">默认支付密码为登录密码！</span><span
+                                            class="success" id="setpasspasrst_1" style="display:none;"></span>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+
+        </div>
+    </div>
+            
+    </div>
+        <div class="clear copyright">
+            成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+        </div>
+</body>
+
+</html>

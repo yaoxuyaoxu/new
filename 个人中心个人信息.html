@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>个人中心个人信息</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+   
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+
+            <div class="setting-title">
+              <div class="setting-title__inner">
+                <i class="setting-title__icon"></i>
+                <span class="setting-title__text">个人设置</span>
+                <span class="setting-title__intro">
+                  <i class="setting-title__intro--icon"></i>
+                  <span class="setting-title__intro--mask">温馨提示：</span>
+                  所有信息平台保护中，确保您的信息不会在平台上泄露
+                </span>
+              </div>
+            </div>
+
+
+            <div class="setting-form">
+      <div class="setting-form-group">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">用户名：</label>
+          <span class="setting-input--line"></span>
+          <input class="setting-input__inner" type="text" value="yd_cahaii" readonly>
+        </div>
+      </div>
+      <div class="setting-form-group">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">真实姓名：</label>
+          <span class="setting-input--line"></span>
+          <input type="hidden" id="csrf_token" value="2ERglAcjatPRTcHLSDuWg7utuwSvm3Z6Zc0hyKcz">
+          <input type="hidden" id="user_id" value="207088">
+          <input class="setting-input__inner" type="text" value="" placeholder=" 没有实名认证 ">
+                      <a class="setting-input__link" href="/userCenter/safety/auth">还没有实名认证？</a>
+                  </div>
+      </div>
+      <div class="setting-form-group">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">手机号码：</label>
+          <span class="setting-input--line"></span>
+          <input class="setting-input__inner" type="text" value="181****8451" readonly>
+          <a class="setting-input__link" href="/userCenter/restPhone">修改</a>
+        </div>
+      </div>
+      <div class="setting-form-group">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">邮箱：</label>
+          <span class="setting-input--line"></span>
+          <input class="setting-input__inner" type="text" id="email" data-email="" value="" placeholder="还未绑定邮箱" readonly>
+          <span class="setting-input__links">
+            <a class="setting-input__link" id="set" href="javascript:;" >设置</a>
+            <span class="setting-input__link--line"></span>
+            <a class="setting-input__link" href="javascript:;" id="bind-modal">修改</a>
+          </span>
+        </div>
+      </div>
+      <div class="setting-form-group clearfix">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">邮寄地址：</label>
+          <select name="province" id="province">
+              <option value="">请选择省份</option>
+                            <option value="2" >北京</option>
+                            <option value="3" >安徽</option>
+                            <option value="4" >福建</option>
+                            <option value="5" >甘肃</option>
+                            <option value="6" >广东</option>
+                            <option value="7" >广西</option>
+                            <option value="8" >贵州</option>
+                            <option value="9" >海南</option>
+                            <option value="10" >河北</option>
+                            <option value="11" >河南</option>
+                            <option value="12" >黑龙江</option>
+                            <option value="13" >湖北</option>
+                            <option value="14" >湖南</option>
+                            <option value="15" >吉林</option>
+                            <option value="16" >江苏</option>
+                            <option value="17" >江西</option>
+                            <option value="18" >辽宁</option>
+                            <option value="19" >内蒙古</option>
+                            <option value="20" >宁夏</option>
+                            <option value="21" >青海</option>
+                            <option value="22" >山东</option>
+                            <option value="23" >山西</option>
+                            <option value="24" >陕西</option>
+                            <option value="25" >上海</option>
+                            <option value="26" >四川</option>
+                            <option value="27" >天津</option>
+                            <option value="28" >西藏</option>
+                            <option value="29" >新疆</option>
+                            <option value="30" >云南</option>
+                            <option value="31" >浙江</option>
+                            <option value="32" >重庆</option>
+                            <option value="33" >香港</option>
+                            <option value="34" >澳门</option>
+                            <option value="35" >台湾</option>
+                            <option value="3439" >海外</option>
+                        </select>
+          <select name="" id="city">
+                                <option value="">请选择城市</option>
+                                              </select>
+          <select name="" id="area">
+                                <option value="">请选择县/区</option>
+                                          </select>
+        </div>
+      </div>
+      <div class="setting-form-group">
+        <div class="setting-input clearfix">
+          <label class="setting-input__label" for="">详细地址：</label>
+          <span class="setting-input--line"></span>
+          <input class="setting-input__inner" type="text" id="detail_address" value="" placeholder="请填写街道地址，用于收取礼品纸质合同" oninput="value=value.replace(/[^\u4e00-\u9fa5a-zA-Z0-9\w]/g,'')">
+        </div>
+      </div>
+
+      <button class="setting-form__submit" onclick="submit_address()">保存信息</button>
+    </div>
+
+        </div>
+    </div>
+    </div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+<script type="text/javascript">
+     function submit_address() {
+        var address = '';
+        var province = $('#province :selected').text();
+        var province_id = $('#province').val();
+        var city = $('#city :selected').text();
+        var city_id = $('#city').val();
+        var area = $('#area :selected').text();
+        var area_id = $('#area').val();
+        var detail_address = $('#detail_address').val();
+
+         if(province_id){
+             address+=province+"-";
+         }else {
+             address +='-';
+         }
+        if(city_id){
+            address+=city+"-";
+        }else {
+            address +='-';
+        }
+        if(area_id){
+            address+=area;
+        }
+
+        if(!province_id){
+             layer.msg('请选择省份',{icon:0});
+             return;
+        }
+        if(detail_address.length <=0){
+            layer.msg('请填写详细地址',{icon:0});
+            return;
+        }
+        if(detail_address.length >100){
+            layer.msg('请输入详细地址不超过100个字符',{icon:0});
+            return;
+        }
+        $.post('/userCenter/saveAddress',{address:address,detail_address:detail_address,_token:$('#csrf_token').val()},function (data) {
+            var rst = eval("("+data+")");
+            if(rst.status ==1){
+                layer.msg(rst.msg,{icon:1,time:2000},function () {
+                    window.location.href='/userCenter/setting';
+                });
+            }else {
+                layer.msg(rst.msg,{icon:0});
+            }
+        })
+    }
+
+</script>
+</html>

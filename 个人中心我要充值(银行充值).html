@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>个人中心我要充值(银行充值)</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+</head>
+
+<body>
+    <div class="header_top_wrap">
+        <div class="box header_top">
+            <span class="fl welcome">店伯乐网店交易服务平台欢迎您！</span>
+            <span class="fr links"><a href="/" target="_blank">店伯乐首页</a>
+            
+            <a href="/helpcenter" target="_blank">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;全国热线：<strong class="fontred">400 006 1351</strong></span>
+        </div>
+    </div>
+    <div class="clear user_header_wrap">
+        <div class="box user_header">
+            <div class="fl user_header_logo"><a href="/"><img src="image/user_logo1.png" style="margin-top:10px;"/></a></div>
+            <div class="fl user_header_nav"><a href="/userCenter" class="br20 active">会员中心 </a><a href="" class="br20 active">我要充值 </a><a href="" class="br20 active">我要提现 </a><a href="" class="br20 active">实名认证 </a></div>
+            <form method="post" class="user-serc">
+                <input type="hidden" name="_token" value="MZM2728Y6XXgjy3HRarpIlfTBHKj9VQYUPWYf52a" />
+                <div class="fr user_header_search"><input name="tmp" type="hidden" value="userCenter" />
+                    <input name="keywords" id="keywords" type="text" class="fl inp" placeholder="请输入您要查找的关键词" required='required' />
+                    <input name="" type="submit3" class="fr btn" value="" onclick="return checkNull()" />
+                </div>
+            </form>
+            <script type="text/javascript">
+            function checkNull() {
+                var keyword = $('#keywords').val();
+                var regS = new RegExp("\\%", "g");
+                keyword = keyword.replace(regS, '');
+                regS = new RegExp("/", "g");
+                keyword = keyword.replace(regS, '');
+                keyword = keyword.replace('\\', '');
+                keyword = keyword.replace(/<[^>]+>/g, "")
+                keyword = keyword.split('-')[0];
+                var url = "/shopSearch/w" + keyword;
+                location.href = url;
+            }
+            </script>
+        </div>
+    </div>
+    <div class="main clearfix user_box">
+        <div class="fl user_left">
+            <div class="user_person_info">
+                <div class="fl con">
+                    <div class="con_hd">
+                        <span class="fl name">hi, <strong><a href="/userCenter/setting">yd_cahaii</a></strong>
+                           
+                        </span>
+                        <span class="fr quit"><a href="/logout"></a></span>
+                    </div>
+                    <div class="con_bd">
+                        <a href="/userCenter/safety" title="手机认证" class="circle link_1 "></a>
+                        <a href="/userCenter/safety" title="邮箱认证" class="circle  link_2"></a>
+                        <a href="/userCenter/safety" title="安全设置" class="circle link_3 "></a>
+                    </div>
+                </div>
+            </div>
+            <div class="user_menu">
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是买家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">未付款的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已预定的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">交接中的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已完成的订单</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要求购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">我是卖家</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">审核中的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">在售的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">已预定的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">交接中的网店</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">已售出的网店</a></li>
+                            <li><span class="fr circle num">0</span><a href="">发布出售信息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">资金管理</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li class=""><span class="fr circle num">0</span><a href="">我要充值</a></li>
+                            <li><span class="fr circle num">0</span><a href="">我要提现</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">资金明细</a></li>
+                            <li><span class="fr circle num">0</span><a href="">索取发票</a></li>
+                            <li class=""><span class="fr circle num">0</span><a href="">绑定银行卡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_hd"><a href="javascript:void(0)" style="color:#ff6d00">个人设置</a></div>
+                    <div class="item_bd">
+                        <ul>
+                            <li><span class="fr circle num">0</span><a href="">个人信息</a></li>
+                            <li><span class="fr circle num">0</span><a href="">实名认证</a></li>
+                            <li><span class="fr circle num">0</span><a href="">修改手机号</a></li>
+                            <li><span class="fr circle num">0</span><a href="">安全设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fr user_right">
+            <div class="user-banl">
+                <div class="banktop">
+                    <ul class="banktop-ul">
+                        <li class="active">
+                            <a href="">我要充值</a>
+                        </li>
+                        <li>
+                            <a href="">我要提现</a>
+                        </li>
+                        <li>
+                            <a href="">收支明细</a>
+                        </li>
+                        <li>
+                            <a href="">充值记录</a>
+                        </li>
+                        <li>
+                            <a href="">提现记录</a>
+                        </li>
+                        <li>
+                            <a href="">发票记录</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bddiv2">
+                    <span class="user_bank_nav"><a href="javascript:viod();"  class="active">网银充值</a><a href="#" >线下柜台充值</a></span>
+                    <a href=""><img src="image/user_qq.png"> </a>
+                </div>
+                <div class="user_recharge_bd">
+                    <div class="user_recharge_item" style="">
+                        <div class="user_recharge_item_hd">请选择合适您的银行充值，<span style="color: #ff0000">温馨提示：请不要多次重复提交相同的金额充值</span></div>
+                        <div class="user_recharge_item_bd">
+                            <form id="submitpay_form">
+                            <div class="onlinebanchongzhi">
+                                <ul class="onlinbalul">
+                                    <li class="on"><input type="radio" name="bank" checked="checked"><div class="s1"><img src="image/bank_0.jpg"> </div> </li>
+                                     <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_1.jpg"> </div> </li>
+                                    <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_2.jpg"> </div> </li>
+                                     <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_3.jpg"> </div> </li>
+                                      <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_4.jpg"> </div> </li>
+                                       <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_5.jpg"> </div> </li>
+                                        <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_6.jpg"> </div> </li>
+                                         <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_7.jpg"> </div> </li>
+                                          <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_8.jpg"> </div> </li>
+                                           <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_9.jpg"> </div> </li>
+                                           <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_10.jpg"> </div> </li>
+                                           <li ><input type="radio" name="bank"><div class="s1"><img src="image/bank_11.jpg"> </div> </li>
+
+                                </ul>
+                            </div>
+                            <div class="user_recharge_result"  style="border-top: 1px solid #dddddd;">
+                                <div class="user_bankset_form_bd">
+                                   
+                                    <div class="hd3">您正在为账号"<strong>yd_cahaii</strong>"充值</div>
+                                    <div class="bd">
+                                       <!--  <form id="submitpay_form"> -->
+                                            <ul>
+                                                <li>
+                                                    <input type="hidden" name="_token" value="2ERglAcjatPRTcHLSDuWg7utuwSvm3Z6Zc0hyKcz">
+                                                    <span class="fl tit" style="width: 160px;">请填写您的充值金额：</span>
+                                                    <div class="fl con"><input name="name" type="text" class="inp" placeholder="请填写您的充值金额"></div>
+                                                </li>
+                                             
+                                                <li>
+                                                    <input id="submitpay" type="button" class="combtn" value="下一步">
+                                                </li>
+                                                <li>
+                                                    <div class="br5 tips">温馨提示 如在充值上遇到什么问题，可以联系上方的财务客服，客服会指导您充值！</div>
+                                                </li>
+                                            </ul>
+                                      <!--   </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="clear copyright">
+        成都店伯乐网络科技有限公司 版权所有川ICP备16020438号 服务热：<b style="color:red">400-820-8820</b>
+    </div>
+</body>
+<script type="text/javascript">
+      $('.onlinbalul li').click(function() {
+                        $(this).addClass("on");
+                         $(this).find('input').attr('checked','checked');
+                        $(this).siblings().removeClass("on");
+                        
+            });
+
+</script>
+
+</html>
