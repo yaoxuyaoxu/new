@@ -1,5 +1,18 @@
-var url = 'http://192.168.3.241/api';
+var url = 'https://api.51dianbole.com/';
 
+
+$(function () {
+    var condition = "";
+    var category="";
+    var menu ="";
+    var obj={}
+    $('.classify').on("click", "em",function(){
+       var d = $(this).parents('.talign').data('id');
+       obj[d]=  $(this).data('id');
+       console.log(obj);
+       
+    })
+});
 
 $.ajax({
     url: url+ '/index/other',
@@ -9,25 +22,17 @@ $.ajax({
     },
     success: function( res ){
         $.each(res.data.class, function(i,item){
-            $('#Class').append('<a href="javascript:;"><em>'+item.name+'</em></a>')
+            i=i+2;
+            $('#Class').append('<a href="javascript:;"><em data-id="'+i+'">'+item.name+'</em></a>')
         })
         $.each(res.data.pt, function(i, item){
-            $('#Platform').append(' <a  href="javascriop:;"><em>'+item.name+'</em></a>');
+            i=i+1;
+            $('#Platform').append(' <a  href="javascriop:;"><em data-id="'+i+'">'+item.name+'</em></a>');
         })
         $.each(res.data.level,function(i, item){
-            $('#Level').append(' <a  href="javascriop:;"><em>'+item.name+'</em></a>')
+            $('#Level').append(' <a  href="javascriop:;"><em data-id="'+i+'">'+item.name+'</em></a>')
         })
-            $('#Platform').find('a').on("click",function(){
-                console.log($(this).text())
-            })
+           
     }
 })
-var search = "";
 
-$.ajax({
-    url: url+ '/search/want'+ search,
-    type: 'GET',
-    success: function( res ){
-        // console.log(res)
-    }
-})

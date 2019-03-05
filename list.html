@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="classify_con fl">
                                     <a  class="classify_default"  href=""><em>全部</em></a>
-                                    <div class="talign" id="Platform">
+                                    <div class="talign" id="Platform" data-id="d">
                                         
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="classify_con fl">
                             <a href="javascript:;"  class="classify_default"><em>全部</em></a>
-                            <div class="talign" id="Class">
+                            <div class="talign" id="Class" data-id="c">
                                     
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="classify_con fl">
                             <a href="javascript:;"  class="classify_default"><em>全部</em></a>
-                            <div class="talign" id="Level">
+                            <div class="talign" id="Level" data-id="l">
                                     
                             </div>
                         </div>
@@ -83,11 +83,11 @@
                         </div>
                         <div class="classify_con fl">
                             <a  class="classify_default"  href=""><em>全部</em></a>
-                            <div class="talign">
-                                <a  href=""><em>旗舰店</em></a>
-                                <a  href=""><em>专营店</em></a>
-                                <a  href=""><em>专卖店</em></a>
-                                <a  href=""><em>供销平台</em></a>
+                            <div class="talign" data-id="t">
+                                <a  href="javascript:;"><em data-id="旗舰店">旗舰店</em></a>
+                                <a  href="javascript:;"><em data-id="专营店">"专营店</em></a>
+                                <a  href="javascript:;"><em>专卖店</em></a>
+                                <a  href="javascript:;"><em>供销平台</em></a>
                             </div>
                         </div>
                     </div>
@@ -97,13 +97,13 @@
                             <span>商标：</span>
                         </div>
                         <div class="classify_con fl">
-                            <a  class="classify_default"  href="javascript:search('b0');"><em>全部</em></a>
+                            <a  class="classify_default"  href="javascript:;"><em>全部</em></a>
                             <div class="talign">
-                                <a href="javascript:search('b1');" ><em>R标</em></a>
-                                <a href="javascript:search('b2');" ><em>TM标</em></a>
-                                <a href="javascript:search('b3');" ><em>授权商标</em></a>
-                                <a href="javascript:search('b4');" ><em>自有商标</em></a>
-                                <a href="javascript:search('b5');" ><em>可贴牌</em></a>
+                                <a href="javascript:;" ><em>R标</em></a>
+                                <a href="javascript:);" ><em>TM标</em></a>
+                                <a href="javascript:;" ><em>授权商标</em></a>
+                                <a href="javascript:;" ><em>自有商标</em></a>
+                                <a href="javascript:;" ><em>可贴牌</em></a>
                             </div>
                         </div>
                     </div>
@@ -281,10 +281,10 @@
     <div class="goods_box main">
         <div class=" goods_sort clearfix">
             <div class="sort_box fl">
-                <span class="sort_new sort1 sortcolor2 " data-desc="0" data-asc="0" onclick="search('u0')">默认排序</span>
-                <span class="sort_new" onclick="search('u2')">信誉等级</span>
-                <span class="sort_new" onclick="search('u2')">好评率</span>
-                <span class="sort_new" onclick="search('u4')">出售价格</span>
+                <span class="sort_new sort1 sortcolor2 " data-desc="0" data-asc="0" >默认排序</span>
+                <span class="sort_new" >信誉等级</span>
+                <span class="sort_new" >好评率</span>
+                <span class="sort_new">出售价格</span>
               
             </div>
             <div class="sort_page fl">
@@ -550,8 +550,10 @@
             </div>
             <div id="footer"></div>
  <script>
-    $('.kind_list').click(function(){    
-        $('.select_lists').css("display", "block");
+    $('.kind_list').hover(function(){    
+        $(this).closest('.kind_list').find('.select_lists').slideDown();
+    },function(){
+        $('.select_lists').slideUp()
     })
 
   
